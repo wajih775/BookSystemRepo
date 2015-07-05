@@ -1,0 +1,108 @@
+﻿@model MVC.Models.LocalPasswordModel
+
+@{
+    ViewBag.Title = "Security";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@section head{
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#ResetPasswordForm").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    OldPassword: { validators: { notEmpty: {} } },
+                    NewPassword: {
+                        validators: {
+                            notEmpty: {}, stringLength: {
+                                min: 6,
+                                message: 'The password must be equal or more than 6 characters'
+                            }
+                        }
+                    },
+                    ConfirmPassword: { validators: { notEmpty: {}, identical: { field: 'NewPassword', message: 'The password and its confirm must be the same' } } }
+                    
+
+                }
+            });
+        });
+    </script>
+}
+
+
+
+<header class="page-header">
+    <h1 class="page-title">Security Settings </h1>
+</header>
+  
+
+<div id="primary" class="">
+    <div id="content" class="container" role="main">
+
+        <article  class="page hentry">
+            <div class="entry-content">
+                
+                
+                @if (!@Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+                }
+                
+
+                @using (Html.BeginForm("Security", "Account", FormMethod.Post, new { @id = "ResetPasswordForm", @name = "ResetPasswordForm", @class="rcp_form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                        @Html.LabelFor(m => m.OldPassword)
+                        @Html.PasswordFor(m => m.OldPassword)
+                        @Html.ValidationMessageFor(m => m.OldPassword)
+                            </div>
+                    </div>
+            
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NewPassword)
+                            @Html.PasswordFor(m => m.NewPassword)
+                            @Html.ValidationMessageFor(m => m.NewPassword)
+                        </div>
+                    </div>
+                    
+             <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                            @Html.PasswordFor(m => m.ConfirmPassword)
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                        </div>
+                    </div>
+                   
+            
+                   
+            
+                    <div class="col-md-12 login-submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Reset" />
+                    </div>
+                }
+
+
+            </div>
+        </article>
+    </div>
+    <!-- #content -->
+  
+</div>
+<!-- #primary -->  

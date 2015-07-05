@@ -1,0 +1,308 @@
+﻿a,
+        .button:hover,
+        a.button-secondary,
+        .load_more_jobs,
+        .load_more_resumes,
+        #wp-submit:hover,
+        .btt:hover i,
+        #submitcomment:hover,
+        #searchsubmit:hover,
+        .recruit_widget_slider .button-secondary:hover,
+        input[type="submit"]:hover,
+        .entry-header a:hover,
+        .entry-title a:hover,
+        .job-manager-form.wp-job-manager-bookmarks-form a:hover,
+        .job_listing a.view-video:hover,
+        .resume a.view-video:hover,
+        .job-manager-pagination a,
+        .job-manager-pagination span,.btnEdit,.btnDelete,.btnAdd {
+            color: #0090ba;
+        }
+
+            .button,
+            .button-secondary:hover,
+            .search_jobs,
+            .search_resumes,
+            .load_more_jobs:hover,
+            .load_more_resumes:hover,
+            .paginate-links .page-numbers:hover,
+            #wp-submit,
+            
+            #submitcomment,
+            #searchsubmit,
+            input[type="submit"],
+            .content-grid .featured-image .overlay,
+            .nav-menu-primary .sub-menu,
+            .nav-menu-primary .children,
+            .site-primary-navigation.open,
+            .site-primary-navigation.close,
+            #pmc_mailchimp div input[type="submit"],
+            .mailbag-wrap input[type="submit"],
+            .pricing-table-widget .pricing-table-widget-title,
+            .recruit_widget_price_table_rcp .pricing-table-widget-title,
+            #rcp_registration_form .pricing-table-widget-title,
+            .job-tag,
+            .job-type,
+            .recruit_widget_slider_hero a.button,
+            
+            .cluster div,
+            .job_listing a.view-video,
+            .resume a.view-video,
+            .job-manager-form.wp-job-manager-bookmarks-form a,
+            .job-manager-pagination a:hover,
+            .job-manager-pagination span:hover {
+                background: #0090ba;
+            }
+
+                .button:hover,
+                a.button-secondary,
+                .load_more_jobs,
+                .load_more_resumes,
+                .paginate-links .page-numbers:hover,
+                input[type="text"]:focus,
+                input[type="email"]:focus,
+                input[type="password"]:focus,
+                input[type="search"]:focus,
+                input[type="number"]:focus,
+                select:focus,
+                textarea:focus,
+                #wp-submit:hover,
+                #submitcomment:hover,
+                #searchsubmit:hover,
+                input[type="submit"]:hover,
+                .job-manager-form.wp-job-manager-bookmarks-form a:hover,
+                .cluster div:after,
+                .woocommerce-message,
+                .woocommerce-error li,
+                .job_listing a.view-video:hover,
+                .resume a.view-video:hover,
+                .job-manager-pagination a,
+                .job-manager-pagination span {
+                    border-color: #0090ba;
+                }
+
+        .nav-menu-primary ul li a,
+        .nav-menu-primary li a,
+        .primary-menu-toggle i,
+        .site-primary-navigation .primary-menu-toggle,
+        .site-primary-navigation #searchform input[type="text"],
+        .site-primary-navigation #searchform button {
+            color: #474747;
+        }
+
+        .nav-menu-primary li.login > a,
+        .nav-menu-primary li.highlight > a {
+            border-color: #ffffff;
+        }
+
+        .site-primary-navigation:not(.open) li.login > a:hover,
+        .site-primary-navigation:not(.open) li.highlight > a:hover {
+            color: #0090ba;
+            background: #ffffff;
+        }
+
+        .site-header,
+        .nav-menu-primary .sub-menu {
+            background: white;
+              border: 1px solid #CACACA;
+        }
+
+        .footer-cta {
+            color: #ffffff;
+            background: #0090ba;
+        }
+
+        ul.job_listings .job_listing:hover,
+        .job_position_featured,
+        li.type-resume:hover {
+            box-shadow: inset 5px 0 0 #0090ba;
+        }
+
+
+
+         .job-type.term-5, .job-type.freelance {
+            background-color: #3399cc;
+        }
+
+        .job-type.term-2, .job-type.full-time {
+            background-color: #01be7e;
+        }
+
+        .job-type.term-6, .job-type.internship {
+            background-color: #00aabc;
+        }
+
+        .job-type.term-3, .job-type.part-time {
+            background-color: #f08d3c;
+        }
+
+        .job-type.term-4, .job-type.temporary {
+            background-color: #e22712;
+        }
+
+        .site-title span {
+              position: relative;
+  top: 10px;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+
+        .site-branding,
+        .site-description {
+            color: #fff;
+        }
+
+         body.custom-background {
+            background-color: #ffffff;
+        }
+
+
+         .nav-menu-primary li a:hover,.nav-menu-primary ul li a:hover{ text-decoration: underline;}
+         .validation-summary-errors ul{ margin: 0px;}
+         .acc-content h3{}
+         .acc-content{border-left: 2px solid #0090ba;padding: 5px 20px;  margin: 10px 0;}
+         .btnAdd,.btnEdit,.btnDelete{ cursor: pointer;}.btnAdd:hover,.btnEdit:hover,.btnDelete:hover{ text-decoration: underline;}
+.col-hidden{ display: none;}
+
+.imgLoading{  text-align: center;}
+    .imgLoading img {
+        width: 25px;
+        height: 25px;
+    }
+
+.timeago{ text-transform: capitalize;
+  font-size: 12px;
+  color: darkgrey;}
+
+.employer_logo{ height: 75px;}
+
+/*Bootstrap Override*/
+.form-group{ margin-bottom: 25px;}
+.form-group .help-block { position: relative;}
+
+
+/*Magnefic Popup*/
+.mfp-iframe-holder .mfp-close {top: 20px;color: rgb(48, 48, 48);right: 30px;width: auto;}
+.mfp-iframe-scaler iframe {background: #E4E4E4;padding: 5px;}
+.iframe {margin-top: 75px;}
+.iframe .job-manager-error{ margin-bottom: 0px;}
+.iframe form{ background-color: #fafafa;padding: 30px 30px 5px 30px;  }
+.iframe form .submit{margin: 0px -30px -60px -30px;
+  padding: 20px 30px;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;}
+.iframe .modal-title{    padding: 20px 30px;
+  position: fixed;  top: 0;
+  z-index: 3;
+  width: 100%;}
+
+.white-popup-block {
+  background: #FFF;
+  padding: 20px 30px;
+  text-align: left;
+  max-width: 650px;
+  margin: 40px auto;
+  position: relative;
+}
+.mfp-close-btn-in .mfp-close{ border: none;width: 35px;height: 35px;line-height: 20px;}
+
+/*Validation*/
+.field-validation-error{   color: rgb(210, 0, 0);
+  position: absolute;}
+
+
+/*Profile*/
+.user-dp-upload { color:black;padding: 5px;width: 232px;height: 232px;text-align: center;border-radius: 50%;border-width: 1px;border-style: solid;display: none;}
+.user-dp-upload ul{  padding: 0;margin: 0;list-style-type: none;color: black;top: 165px;position: absolute;border: 1px solid lightgray;right: -52px;z-index: 5;  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);}
+.user-dp-upload ul li{background-color: white;padding: 0 25px;border-bottom: 1px solid lightgray;  text-align: left;}
+.user-dp-upload ul li:last-child{ border-bottom: none;}
+.user-dp-upload ul li:hover{background-color: rgb(240, 240, 240)}
+.user-dp-upload ul li .btn{  line-height: 25px;margin-top: 0;background-color: inherit;border: none;}
+.user-dp-upload ul li .btn:active{  -webkit-box-shadow: none;box-shadow: none;}
+.user-dp-upload ul li .btn span{color:#0090ba}.user-dp-upload ul li .btn .glyphicon{ color: darkgray;}
+#progress {color: black;display: none;
+  padding: 5px;
+  width: 222px;
+  height: 222px;
+  text-align: center;
+  border-color: white;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  position: absolute;
+  top: 5px;
+  background-color: rgba(255, 255, 255, 0.77);} 
+#progress img{  width: 70px;
+  height: 70px;
+  position: relative;
+  top: 50%;
+  margin-top: -35px;}
+#progress .count{position: absolute;  color: darkgray;
+  top: 99px;
+  left: 95px;}
+
+#cvProgress{  padding: 2px;border: 1px solid darkgray;position: relative;display: none;}
+#logoProgress{ display: none;}
+#cvProgress .progress-bar-status{   background-color: rgb(0, 182, 249);width: 0%;height: 2px;}
+.textarea200{ max-height: 200px;height: 100px!important;}
+
+/*jQueryFileUpload*/
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+  .fileinput-button input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
+  }
+}
+
+
+
+/*Jobs*/
+.job-admin-controls a{  color: #0090ba;font-weight: bold;}
+.apply{  padding: 15px;
+  max-width: 150px;
+  float: right;}
+.sd-content ul {
+  padding: 0!important;
+  margin: 0 0 .7em!important;
+  list-style: none!important;
+}
+.seperate-section{  margin-bottom: 2px;
+  border-bottom: 1px solid rgb(226, 226, 226);}
+.apply-now-container .callout{padding: 15px}
+.apply-now-container ul{ list-style-type: none;font-size: 18px;margin: 0;}
+.apply-now-container ul li{   display: inline;color: rgb(152, 152, 152);cursor: pointer;}
+.apply-now-container ul  .disable{ display: none;}
+.apply-now-container ul  .disable:hover{ text-decoration: none !important;cursor: no-drop !important;}
+.apply-now-container ul li:hover{ text-decoration: underline;color: #0090ba; }
+#application-process .glyphicon{ margin: 0px 10px;}
+
+.filter{}
+.filter .filter-type{  border-bottom: 2px solid rgb(0, 144, 186);margin-bottom: 5px;}
+.filter ul{ list-style-type: none;margin: 5px 0px;}
+.filter ul li{}
+
+/*Theme*/
+h1,h2,h3,h4{color: #0090ba}
+
+/*Editor*/
+.mceToolbar{ width: initial;}

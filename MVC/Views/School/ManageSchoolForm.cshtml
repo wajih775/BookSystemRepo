@@ -1,0 +1,45 @@
+﻿@model DomainModel.School
+
+<form method="POST" action="/School/ManageSchoolForm" data-ajax="true" data-ajax-mode="replace">
+    @Html.TextBoxFor(model => model.ID, new { @id = "txtSchoolId", @style = "display:none;" })
+    <div class="control-group" style="margin-top: 15px;">
+        <label style="width: 20%;" class="pull-left">School Name:&nbsp;  </label>
+        <div class="input-prepend" data-rel="tooltip">
+            <input style="width: 35%;" required="required" title="Please fill School name" autofocus="True" class="input-validation-error input-xlarge focused" data-val="true"
+                data-val-required="School name required" id="txtSchoolName" name="Name" type="text">
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.Name)</span>
+        </div>
+    </div>
+
+    <div class="control-group" style="margin-top: 15px;">
+        <label style="width: 20%;" class="pull-left">Country:&nbsp;  </label>
+        <div class="input-prepend" data-rel="tooltip">
+            <input style="width: 35%;" required="required" title="Please fill Country name" autofocus="True" class="input-validation-error input-xlarge focused" data-val="true"
+                data-val-required="School name required" id="txtSchoolCountry" name="Country" type="text">
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.Country)</span>
+        </div>
+    </div>
+
+
+    <div class="control-group" style="margin-top: 15px;">
+        <label style="width: 20%;" class="pull-left">City:&nbsp;  </label>
+        <div class="input-prepend" data-rel="tooltip">
+            <input style="width: 35%;" required="required" title="Please fill City name" class="input-validation-error input-xlarge focused" data-val="true"
+                data-val-required="Abbreviation required" id="txtCity" name="City" type="text">
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.City)</span>
+        </div>
+    </div>
+
+    <div class="control-group" style="margin-top: 15px;">
+        <label style="width: 20%;" class="pull-left">LogoPath:&nbsp;  </label>
+        <div class="input-prepend" data-rel="tooltip">
+            <input style="width: 35%;" required="required" title="Please fill Logo Path" class="input-validation-error input-xlarge focused" data-val="true"
+                data-val-required="Abbreviation required" id="txtLogoPath" name="LogoPath" type="text">
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.LogoPath)</span>
+        </div>
+    </div>
+
+    <div class="form-actions" style="margin-top: 10px;">
+        <input id="btnManage" type="submit" value="" class="btn cs-bgcolor" style="color: #fff" />
+    </div>
+</form>

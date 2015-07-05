@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+
+
+    <!--CSS-->
+
+    <link href="../../content/css/styles.css" rel="stylesheet" />
+    <link href="../../content/css/iconmoon.css" rel="stylesheet" />
+    <link href="../../content/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../content/css/style.css" rel="stylesheet" />
+    <link href="../../content/css/responsive.css" rel="stylesheet" />
+    <link href="../../content/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../content/css/custom.css" rel="stylesheet" />
+    <link href="~/content/css/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+
+    <!--SCRIPTS-->
+    <script src="~/scripts/AppScripts/jQuery-2.1.3.min.js"></script>
+    <script src="~/scripts/AppScripts/jquery-ui.js"></script>
+    <script src="~/content/js/bootstrap.min.js"></script>
+    <script src="~/scripts/AppScripts/custom.js"></script>
+
+    @RenderSection("head", true)
+</head>
+<body class="page ">
+
+    <!-- Header 1 Start -->
+    <header id="main-header" class=" top-bar-off">
+        <!-- Top Strip -->
+        <!-- Main Header -->
+        <div class="main-navbar">
+            <div class="container">
+                <aside class="left-side">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="../../content/images/logo.png" style="width: 142px; height: 65px;" alt="Directory">
+                        </a>
+                    </div>
+                </aside>
+                <aside class="right-side">
+                    <nav class="navigation">
+                        <a class="cs-click-menu"><i class="icon-list8"></i></a>
+                        <ul>
+                            <li class=" dropdown"><a href="#">HOME</a></li>
+                            <li class=" dropdown"><a href="#">HOME</a></li>
+                        </ul>
+                    </nav>
+                    <div class="btn-sec">
+                        <a data-toggle="modal" data-target="#cs_ad_post_modal" class="hd-btn cs-bgcolor"><i class="icon-plus3"></i>Post an Ad</a>
+                        <div class="cs-login-sec">
+                            <ul>
+                                <li>
+                                    <a href="#" class="cs-user"><i class="icon-user2"></i></a>
+                                    <div class="cs-signup" style="display: none;">
+                                        <!-- Header Element -->
+                                        <script>
+
+                                        </script>
+
+                                        <section class="sg-header ">
+                                            <div class="header-element login-from login-form-id-492857" id="login-from-492857">
+                                                <h6>User Sign in</h6>
+                                                <form method="post" class="wp-user-form webkit" id="ControlForm_492857">
+                                                    <fieldset>
+                                                        <span class="status status-message" style="display: none"></span>
+                                                        <p class="sg-email">
+                                                            <span class="iconuser"></span>
+                                                            <input type="text" name="user_login" size="20" tabindex="12" onfocus="if(this.value =='Username') { this.value = ''; }" onblur="if(this.value == '') { this.value ='Username'; }" value="Username">
+                                                        </p>
+                                                        <p class="sg-password">
+                                                            <span class="iconepassword"></span>
+                                                            <input type="password" name="user_pass" size="20" tabindex="12" onfocus="if(this.value =='Password') { this.value = ''; }" onblur="if(this.value == '') { this.value ='Password'; }" value="Password">
+                                                        </p>
+
+                                                        <p>
+                                                            <i class="icon-angle-right"></i>
+                                                            <input type="button" name="user-submit" class="cs-bgcolor" value="Sign in" onclick="javascript: cs_user_authentication('http://directory.chimpgroup.com/wp-admin/admin-ajax.php', '492857')" />
+
+                                                        </p>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+
+                                            <!-- End of social_login_ui div -->
+                                        </section>
+
+                                        <aside class="sg-footer">
+                                            <a href="#" class="left-side">Forget Password</a>
+                                            <p id="signup-now" class="right-side"><a>Sign Up</a></p>
+
+                                        </aside>
+
+                                        <!-- Footer Element -->
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </header>
+    <div class="clear"></div>
+
+
+    <!-- Main-->
+    <div id="main-content">
+        <!-- Main Section -->
+        <div class="main-section">
+            <!-- Page Section -->
+            @RenderBody()
+        </div>
+    </div>
+
+    <!-- Footer-->
+    <div class="footer-content">
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer_icon"><a href="http://directory.chimpgroup.com">
+                            <img src="http://directory.chimpgroup.com/wp-content/themes/directory-theme/assets/images/footer-logo.png" alt="Directory"></a></div>
+                        <nav class="footer-nav">
+                            <ul>
+                                <li id="menu-item-2106" class="menu-item dropdown sub-menu menu-item-type-post_type dropdown sub-menu menu-item-object-page dropdown sub-menu current-menu-item dropdown sub-menu page_item dropdown sub-menu page-item-367 dropdown sub-menu current_page_item"><a href="http://directory.chimpgroup.com/">Home</a></li>
+                                <li id="menu-item-2107" class="menu-item dropdown sub-menu menu-item-type-post_type dropdown sub-menu menu-item-object-page"><a href="http://directory.chimpgroup.com/agencies/">Agencies</a></li>
+                                <li id="menu-item-2108" class="menu-item dropdown sub-menu menu-item-type-post_type dropdown sub-menu menu-item-object-page"><a href="http://directory.chimpgroup.com/agents/">Agents</a></li>
+                                <li id="menu-item-2109" class="menu-item dropdown sub-menu menu-item-type-post_type dropdown sub-menu menu-item-object-page"><a href="http://directory.chimpgroup.com/blog-medium/">BLOG MEDIUM</a></li>
+                                <li id="menu-item-2110" class="menu-item dropdown sub-menu menu-item-type-post_type dropdown sub-menu menu-item-object-page"><a href="http://directory.chimpgroup.com/contact-us/">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                        <p>© 2014 Theme Options Wordpress All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-media">
+                            <ul>
+
+                                <li>
+                                    <a style="color: #cccccc;" title="" href="http://facebook.com" data-original-title="Facebook" data-placement="top" class="colrhover" target="_blank">
+
+                                        <i class="fa icon-facebook7 "></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="color: #cccccc;" title="" href="http://www.twitter.com" data-original-title="Twitter" data-placement="top" class="colrhover" target="_blank">
+
+                                        <i class="fa icon-twitter2 "></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="color: #ccc;" title="" href="http://plus.google.com" data-original-title="Google Plus" data-placement="top" class="colrhover" target="_blank">
+
+                                        <i class="fa icon-skype "></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="color: #cccccc;" title="" href="http://www.linkedin.com" data-original-title="Linkedin" data-placement="top" class="colrhover" target="_blank">
+
+                                        <i class="fa icon-linkedin4 "></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="color: #ccc;" title="" href="http://www.tumbler.com" data-original-title="Tumbler" data-placement="top" class="colrhover" target="_blank">
+
+                                        <i class="fa icon-tumblr5 "></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" id="backtop"><i class="icon-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

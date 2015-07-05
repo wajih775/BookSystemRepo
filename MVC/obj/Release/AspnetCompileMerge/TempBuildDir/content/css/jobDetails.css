@@ -1,0 +1,8 @@
+﻿/*Print Job Details*/
+@media print {
+    #site-navigation,.primary-menu-toggle,.right-column,.apply-now-container{ display: none;}
+
+    a[href]:after {
+    content: none !important;
+  }
+}

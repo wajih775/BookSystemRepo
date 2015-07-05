@@ -1,0 +1,75 @@
+﻿@if (Request.IsAuthenticated)
+{
+    if (User.IsInRole("User"))
+    {
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("Jobs", "Index", "Jobs")
+        <ul class="sub-menu">
+            <li>@Html.ActionLink("My Jobs", "Applied", "Jobs")</li>
+        </ul>
+    </li>
+    <li>
+        @Html.ActionLink("Settings", "Index", "Profile", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })
+        <ul class="sub-menu">
+            <li class="">@Html.ActionLink("Profile", "Index", "Profile")</li>
+            <li class="">@Html.ActionLink("Edit Resume", "Manage", "Profile")</li>
+            <li class="">@Html.ActionLink("Account", "Account", "Profile")</li>
+            <li class="">@Html.ActionLink("Security", "Security", "Account")</li>
+            <li>
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                }
+            </li>
+
+        </ul>
+
+
+    </li>
+    }
+    else
+    {
+        if (User.IsInRole("Company"))
+        {
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("Candidates", "Index", "Candidate")</li>
+    <li>@Html.ActionLink("Jobs", "Index", "Jobs")
+        <ul class="sub-menu">
+            <li>@Html.ActionLink("New", "New", "Jobs")</li>
+            <li>@Html.ActionLink("Posted Job", "Posted", "Jobs")</li>
+        </ul>
+    </li>
+    <li>
+        @Html.ActionLink("Settings", "Index", "Company", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })
+        <ul class="sub-menu">
+            <li class="">@Html.ActionLink("Company Profile", "Index", "Company")</li>
+            <li class="">@Html.ActionLink("Account", "Account", "Company")</li>
+            <li class="">@Html.ActionLink("Security", "Security", "Account")</li>
+            <li>
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                }
+            </li>
+
+        </ul>
+
+
+    </li>
+        }
+    }
+
+
+
+}
+else
+{
+   <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("Create An Account", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("Post An Add", "Login", "Account", routeValues: null, htmlAttributes: new { id = "postLink" })</li>
+    
+    
+}

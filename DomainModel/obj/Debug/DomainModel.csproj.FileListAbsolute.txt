@@ -1,0 +1,67 @@
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\DomainModel\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\DomainModel\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\DomainModel\obj\Debug\DomainModel.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\DomainModel\obj\Debug\DomainModel.pdb
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\DomainModel\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\DomainModel\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\DomainModel\obj\Debug\DomainModel.dll
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 2.0\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 2.0\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 2.0\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 2.0\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 2.0\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 3.0\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.0\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 3.0\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.0\DomainModel\obj\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\bin\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\bin\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\obj\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\obj\Debug\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\obj\Debug\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\obj\Debug\DomainModel.pdb
+E:\Projects\SchoolGap\Books\DomainModel\bin\Debug\DomainModel.dll
+E:\Projects\SchoolGap\Books\DomainModel\bin\Debug\DomainModel.pdb
+E:\Projects\SchoolGap\Books\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+E:\Projects\SchoolGap\Books\DomainModel\obj\Debug\DomainModel.dll
+E:\Projects\SchoolGap\Books\DomainModel\obj\Debug\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\books\DomainModel\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\books\DomainModel\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\books\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Downloads\SchoolGapZip\books\DomainModel\obj\Debug\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\books\DomainModel\obj\Debug\DomainModel.pdb
+D:\Wajih\arsalan bhai\projects\BooksSystem\DomainModel\bin\Debug\DomainModel.dll
+D:\Wajih\arsalan bhai\projects\BooksSystem\DomainModel\bin\Debug\DomainModel.pdb
+D:\Wajih\arsalan bhai\projects\BooksSystem\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\Wajih\arsalan bhai\projects\BooksSystem\DomainModel\obj\Debug\DomainModel.dll
+D:\Wajih\arsalan bhai\projects\BooksSystem\DomainModel\obj\Debug\DomainModel.pdb

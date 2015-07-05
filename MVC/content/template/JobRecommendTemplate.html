@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Jobs Recommendation</title>
+     <style>
+        body, .mytable {background-color: rgb(245, 245, 245);font-family: 'HelveticaNeue-Regular', 'Helvetica Neue Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;line-height: 20px;padding-bottom: 20px;}
+        h2 {color: rgb(28, 125, 185);font-weight: normal;}
+        table {width: 100%;}.small {font-size: 11px;font-weight: bold;color: gray;}
+        .medium {font-size: 14px;text-align: left;}.table-heading {background-color: rgb(28, 125, 185);padding: 10px 20px;color: white;font-size: 24px;text-align: center;}
+        a {text-decoration: none;}
+        .altRows{background-color: rgb(245, 245, 245)}
+    </style>
+  
+</head>
+    
+    <body style="background-color: rgb(245, 245, 245);">
+   
+    <table width="100%" class="mytable" >
+        <tr>
+            <td colspan="3"><br/></td>
+        </tr>
+        <tr>
+            <td width="30%"></td>
+            <td width="40%" style="background-color: white; border:1px solid #d0d0d0;padding: 20px;margin: 20px;" align="center">
+                <table width="100%">
+                    <tr>
+                        <td width="20%"><img  src="http://jobs.schoolgap.com/content/images/logo.png" width="158" height="58"></td>
+                        <td width="80%" align="right"><span class="small">{NAME}, Jobs Recommendation..</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="padding-top:5px;padding-bottom:5px"><table class="table-heading"><tr><td>Jobs Recommendation</td></tr></table> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">
+                            <div class="medium">
+                                Dear {NAME}, 
+                                <br />
+                                <br />
+                Your friend has recommended you a job in SchoolGap Jobs, please find below the job details:</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <table style='width: 100%; text-align: left;' >
+                                <tr style='background-color: rgb(18, 128, 190); color: white;'>
+                                    <td style='padding: 5px; font-size: 16px;' class='font' colspan="2">Job Details</td>
+                                </tr>
+
+                                <tr class=''>
+                                    <td >Job Id </td>
+                                    <td >{JOB_ID} </td>
+
+                                </tr>
+                                <tr class='altRows'>
+                                    <td class='font'>Job Title</td>
+                                    <td class='font'>{JOB_TITLE}</td>
+                                </tr>
+                                <tr class=''>
+                                    <td class='font'>Job Description</td>
+                                    <td class='font'>{JOB_DESC}</td>
+                                </tr>
+
+                                <tr class='altRows'>
+                                    <td class='font'>Min Experience</td>
+                                    <td class='font'>{JOB_EXP}</td>
+                                </tr>
+
+                                <tr class=''>
+                                    <td class='font'>Last Date To Apply</td>
+                                    <td class='font'>{JOB_DATE}</td>
+                                </tr>
+
+                                
+
+                            </table>
+                        </td>
+                    </tr>
+                    
+
+                    <tr>
+                        <td colspan="2" >
+                            <table>
+                                <tr>
+                                    <td width="30%"></td>
+                                    <td width="40%" style="color: #ffffff;border-bottom: 3px solid #008a32;background-color: rgb(28, 125, 185);text-align: center;padding: 10px"><a href="http://jobs.schoolgap.com/jobs/details?job_id={JOB_ID}" style="color: white;text-decoration: none;" >View / Apply Now</a></td>
+                                    <td width="30%"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+            <td width="30%"></td>
+        </tr> 
+        <tr>
+            <td colspan="3"><br/></td>
+        </tr>
+        <tr>
+            <td colspan="3"><br/></td>
+        </tr>
+        <tr>
+            <td colspan="3"><br/></td>
+        </tr>
+    </table>
+    
+  
+    
+</body>
+</html>

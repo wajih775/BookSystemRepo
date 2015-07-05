@@ -1,0 +1,178 @@
+﻿@model MVC.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section head{
+
+    
+    <script type="text/javascript">
+        jQuery(function() {
+            jQuery('.datepicker').datepicker({ format: "dd-mm-yyyy" }); //Initialise any date pickers
+        });
+    </script>
+
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#registrationForm").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Email: {validators: {notEmpty: {},emailAddress: {}}},
+                    FirstName: { validators: { notEmpty: {} } },
+                    LastName: { validators: { notEmpty: {} } },
+                    Country: { validators: { notEmpty: {} } },
+                    City: { validators: { notEmpty: {} } },
+                    DOB: { validators: { notEmpty: {}, date: { format: 'DD-MM-YYYY', message: 'Invalid Date Format' } } },
+                    Nationality: { validators: { notEmpty: {} } },
+                    Password: { validators: { notEmpty: {} } },
+                    ConfirmPassword: { validators: { notEmpty: {}, identical: { field: 'Password', message: 'The password and its confirm must be the same' } } }
+
+                }
+            });
+        });
+    </script>
+}
+
+
+<header class="page-header">
+    <h1 class="page-title">Register</h1>
+</header>
+
+<div id="primary" class="">
+    <div id="content" class="container" role="main">
+
+        <article class="page hentry ">
+            <div class="entry-content">
+
+
+                @if (!@Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+                }
+
+
+
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "registrationForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email)
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FirstName)
+                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.FirstName)
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.LastName)
+                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.LastName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Country)
+                                @Html.DropDownListFor(m => m.Country, ViewData["Countries"] as SelectList)
+                                @Html.ValidationMessageFor(m => m.Country)
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.City)
+                                @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.City)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Gender)
+                                <br />
+                                @Html.RadioButtonFor(m => m.Gender, "Male", new { @checked = "checked", id = "option-male" })
+                                <label for="option-male">Male</label>
+                                @Html.RadioButtonFor(m => m.Gender, "Female", new { id = "option-female" })
+                                <label for="option-female">Female</label>
+                                @Html.ValidationMessageFor(m => m.Gender)
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.DOB)
+                                @Html.TextBoxFor(m => m.DOB, new { @class = "form-control datepicker" })
+                                @Html.ValidationMessageFor(m => m.DOB)
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Nationality)
+                                @Html.TextBoxFor(m => m.Nationality, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Nationality)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password)
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword)
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    <p  ><i class="icon-help-circled"></i>Already have an account?  @Html.ActionLink("Login", "Login")</p>
+                    
+                    
+                    <p class="login-submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Register" />
+                    </p>
+                }
+
+
+            </div>
+        </article>
+    </div>
+    <!-- #content -->
+
+</div>
+<!-- #primary -->

@@ -1,0 +1,179 @@
+﻿@model IList<DomainModel.School>
+@using DomainModel;
+
+@{
+    ViewBag.Title = "School";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@section head
+{
+
+    <script type="text/javascript">
+
+        function OpenModal(e) {
+            debugger
+            var Heading = $(e).data('actionheader');
+            var status = false;
+            if (Heading == 'DELETE') {
+                status = confirm('Are u sure want to delete this record');
+            }
+
+            var url = $(e).data('href');
+            $('.modal-title').html('').html(Heading.toUpperCase() + ' FORM');
+            $.get(url, function (data) {
+                $('.modal-body').html('').html(data);
+                $('#btnManage').val('').val(Heading.toUpperCase());
+                var height = $(window).height() - 200;
+
+                debugger
+                if (Heading == 'edit') {
+                    var id = $(e).data('id');
+                    $("#txtSchoolId").val($('#hdnSchoolId' + id).val());
+                    $("#txtSchoolName").val($('#hdnName' + id).val());
+                    $("#txtSchoolCountry").val($('#hdnCounty' + id).val());
+                    $("#txtCity").val($('#hdnCity' + id).val());
+                    $("#txtLogoPath").val($('#hdnPath' + id).val());
+                }
+
+                doAjaxSubmit('ModalArea', 'divAddSuccesss', 'divAddWarningg');
+            });
+        };
+
+        function CloseModal(e) {
+            location.reload();
+        }
+
+        function DeleteItem(e) {
+            var isDeleteRequired = confirm('Are you delete?');
+            if (isDeleteRequired) {
+                var RequestStatus = doAjaxRequest('post', '/School/DeleteById', JSON.stringify({ Id: $(e).data('id') }), 'json', false);
+                debugger
+                if (RequestStatus != null && RequestStatus != "") {
+                    if (RequestStatus.status) {
+                        showSuccess(RequestStatus.message, 'divAddWarning', 'delete');
+                    } else {
+                        showWarning(RequestStatus.message, 'divAddSuccess', 'delete');
+
+                    }
+                }
+            }
+        }
+
+
+    </script>
+}
+
+<!-- Page Section //Schools -->
+<div class="page-section " style="margin-top: 0px; padding-top: 10px; padding-bottom: 30px; margin-bottom: 0px; border-top: 0px #e0e0e0 solid; border-bottom: 0px #e0e0e0 solid;">
+    <!-- Container Start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 cs-section-title">
+                <div id="divAddSuccess" style="display: none; width: auto; height: auto;" class="alert alert-success divSuccess" role="alert"></div>
+                <div id="divAddWarning" style="display: none; width: auto; height: auto;" class="alert alert-warning divWarning" role="alert"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section-fullwidth">
+
+                <div class="element-size-100">
+                    <div class="col-md-6 cs-section-title">
+                        <h2>Schools</h2>
+                    </div>
+                    <div class="cs-section-title col-md-5">
+                        <a class="btn cs-bgcolor pull-right" style="cursor: pointer; color: #fff" onclick="OpenModal(this);" data-backdrop="static" data-target="#myModal" data-actionheader="ADD" data-toggle="modal" data-href="/School/ManageSchoolForm">Add School</a>
+                    </div>
+                    <div class="cs-directory grid_listing">
+
+                        <div class="cs-blogslide ">
+                            @if (Model != null && Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                <div class="col-md-3">
+                                    <article>
+                                        <div class="directory-section">
+                                            <div class="cs_thumbsection">
+                                                <figure>
+                                                    <a href="http://directory.chimpgroup.com/directory/furnished-villa-for-sale/">
+                                                        <span class="cs-paid-ad">Featured</span>
+                                                        <img style="height: 201px;" alt="" src="@item.LogoPath">
+                                                    </a>
+                                                </figure>
+                                            </div>
+
+                                            <div class="content_info">
+                                                <h2 itemprop="name" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="http://directory.chimpgroup.com/directory/furnished-villa-for-sale/">@item.Name
+                                                    </a>
+                                                </h2>
+                                                <div itemprop="name" itemscope itemtype="http://schema.org/Thing">
+                                                    <span>Country&nbsp;:&nbsp;</span><span>@item.Country</span>
+                                                </div>
+                                                <div itemprop="name" itemscope itemtype="http://schema.org/Thing">
+                                                    <span>City&nbsp;:&nbsp;</span><span>@item.City</span>
+                                                </div>
+                                                <div class="dr_pricesection" itemprop="offers" style="margin-top:10px;" itemscope itemtype="http://schema.org/Offer">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <a class="btn cs-bgcolor " style="cursor: pointer; color: #fff;" onclick="OpenModal(this);" data-id="@item.ID" data-backdrop="static" data-target="#myModal" data-toggle="modal" data-actionheader="edit" data-href="/School/ManageSchoolForm">Edit</a>
+                                                            @Html.Hidden("ID", @item.ID, new { Id = "hdnSchoolId" + @item.ID })
+                                                            @Html.Hidden("Name", @item.Name, new { Id = "hdnName" + @item.ID })
+                                                            @Html.Hidden("Country", @item.Country, new { Id = "hdnCounty" + @item.ID })
+                                                            @Html.Hidden("City", @item.City, new { Id = "hdnCity" + @item.ID })
+                                                            @Html.Hidden("Path", @item.LogoPath, new { Id = "hdnPath" + @item.ID })
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <a class="btn cs-bgcolor pull-right btnDelete" style="cursor:pointer;color:#fff" onclick="DeleteItem(this);" data-id="@item.ID">Delete</a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="col-md-12">
+                                    <h2>No Scools</h2>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" data-easein="rollIn" data-easeout="rollOut" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="display: block;">
+                <button type="button" style="color: blue;" class="close" data-dismiss="modal" aria-label="Close" onclick="CloseModal(this)"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body" id="ModalArea">
+            </div>
+            <div class="modal-footer" style="display: block;">
+                <div id="divAddSuccesss" style="display: none; width: auto; height: auto;" class="alert alert-success divSuccess" role="alert"></div>
+                <div id="divAddWarningg" style="display: none; width: auto; height: auto;" class="alert alert-warning divWarning" role="alert"></div>
+
+                <button style="display: none;" type="button" class="btn btn-default" data-dismiss="modal" onclick="CloseModal(this)">Close</button>
+                <button style="display: none;" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+
+

@@ -1,0 +1,22 @@
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\BusinessLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\DataLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\EntityFramework.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\DataLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Release\EntityFramework.xml
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\obj\Release\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\obj\Release\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\obj\Release\BusinessLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\BusinessLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\BusinessLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\DataLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\EntityFramework.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\DataLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Release\EntityFramework.xml
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\obj\Release\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\obj\Release\BusinessLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\obj\Release\BusinessLayer.pdb

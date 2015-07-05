@@ -1,0 +1,10 @@
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\bin\Release\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\bin\Release\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\obj\Release\DomainModel.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\obj\Release\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.1\DomainModel\obj\Release\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\bin\Release\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\bin\Release\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\obj\Release\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\obj\Release\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\DomainModel\obj\Release\DomainModel.pdb

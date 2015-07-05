@@ -1,0 +1,83 @@
+﻿@model DomainModel.Languages
+
+@{
+    ViewBag.Title = "Edit | Language";
+    Layout = "~/Views/Shared/_MinLayout.cshtml";
+}
+
+
+
+@section head{
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#frmLanguage").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Language: { validators: { notEmpty: {} } },
+                    Level: { validators: { notEmpty: {} } },
+                    YearsOfExperience: { validators: { notEmpty: {} } }
+                    
+
+                }
+            });
+        });
+    </script>
+}
+
+
+<h2 class="modal-title">Language</h2>
+
+
+ @if (!@Html.ViewData.ModelState.IsValid)
+ {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+ }
+
+
+
+                @using (Html.BeginForm("Edit", "Language", FormMethod.Post, new { id = "frmLanguage" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.TextBoxFor(m=>m.ID,new {@type="hidden"})
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Language)
+                            @Html.TextBoxFor(m => m.Language, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Language)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Level)
+                             @Html.DropDownListFor(m => m.Level, ViewData["Levels"] as SelectList)
+                            @Html.ValidationMessageFor(m => m.Level)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.YearsOfExperience)
+                             @Html.DropDownListFor(m => m.YearsOfExperience, ViewData["YearsOfExperience"] as SelectList)
+                            @Html.ValidationMessageFor(m => m.YearsOfExperience)
+                        </div>
+                    </div>
+                    
+                    <p class="submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Update" />
+                    </p>
+                }
+
+
+    

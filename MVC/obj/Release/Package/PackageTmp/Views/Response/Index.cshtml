@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+    <title>Response</title>
+    @*<link href="../../content/css/bootstrap.min.css" rel="stylesheet" />*@
+    <style>
+        h2{  padding: 5px;
+  text-align: center;}
+        body{margin-top:55px;}
+        .bg-message {
+  color: #9B9B9B;
+   background-color: white; 
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid rgb(169, 169, 169);
+}
+    </style>
+</head>
+<body>
+    <div class="bg-message">
+        
+        <h2 class="success">@Request.QueryString["msg"].ToString()</h2>
+
+    </div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+

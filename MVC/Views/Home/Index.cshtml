@@ -1,0 +1,208 @@
+﻿@model IList<DomainModel.School>
+@using DomainModel;
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section head
+{
+
+}
+
+<div class="page-section " style="margin-top: -35px; margin-bottom: 0px; border-top: 0px #e0e0e0 solid; border-bottom: 0px #e0e0e0 solid; background: #f5f5f5;">
+    <!-- Container Start -->
+    <div class="wide">
+        <div class="row">
+            <div class="section-fullwidth">
+                <div class="element-size-100">
+                    <div class="map-search-shortcode cs-search-map-enable cs-search-v1">
+                        <div id="map-container124593786" class="map-container">
+                        </div>
+
+                        <!-- Advance search code -->
+                        <div id="directory-advanced-search">
+                            <div class="container">
+                                <div class="directory-advanced-search-content">
+                                    <form class="form-horizontal" accept-charset="UTF-8" method="get" action="../Search/" role="search">
+                                        <input type="hidden" name="filter" value="all" />
+                                        <div class="dir-search-fields">
+
+                                            <ul>
+                                                <li>
+                                                    <h6>Search Text</h6>
+                                                    <input type="text" class="form-search-text" maxlength="128" size="30" value="" name="search_text" id="edit-search-api-views-fulltext" placeholder="Enter keyword...">
+                                                </li>
+
+                                                <li>
+                                                    <h6>All Types</h6>
+                                                    <select class="form-select dir-map-search SlectBox" name="type" id="directory-field-category">
+                                                        <option value="">All Types</option>
+                                                        <option value="property">&nbsp;Property</option>
+                                                        <option value="motors">&nbsp;Motors</option>
+                                                        <option value="for-sale">&nbsp;For Sale</option>
+                                                        <option value="jobs">&nbsp;Jobs</option>
+                                                        <option value="services">&nbsp;Services</option>
+                                                        <option value="restaurant">&nbsp;Restaurant</option>
+                                                        <option value="pets">&nbsp;Pets</option>
+                                                        <option value="hotels-travel">&nbsp;Hotels &#038; Travel</option>
+                                                        <option value="education">&nbsp;Education</option>
+                                                    </select>
+                                                </li>
+                                                <li class="loc-section">
+                                                    <h6>Locations</h6>
+
+                                                    <div class="location-icon" onclick="">
+                                                        <img src="http://directory.chimpgroup.com/wp-content/plugins/wp-directory//assets/images/maplocation.png" alt="" />
+                                                    </div>
+
+                                                    <input type="search" value="" autocomplete="on" id="directory-search-location" title="Location" placeholder="Postcode or location" name="location">
+                                                    <input id="geo_loc_option" name="geo" type="hidden" value="on">
+                                                </li>
+                                                <li class="to-field">
+                                                    <h6>Distance From Location</h6>
+                                                    <div class="input-sec">
+                                                        <span class="drag-slider-tooltip"></span>
+                                                        <div class="cs-drag-slider slider-distance-range" data-slider-min="10" data-slider-max="300" data-slider-step="1" data-slider-value="150"></div>
+                                                        <input id="radius782041145" class="cs-range-input" name="radius" type="text" value="150" />
+                                                    </div>
+
+                                                    <li class="price-search">
+                                                        <div class="advance-search-price-range">
+
+                                                            <h6>Price Range</h6>
+
+                                                            <ul>
+                                                                <li>
+                                                                    <input id="min_price" onblur="if(this.value == '') { this.value ='Min Price'; }" onfocus="if(this.value =='Min Price') { this.value = ''; }" class="search_min_price" name="min_price" type="text" value="Min Price">
+                                                                </li>
+                                                                <li>
+                                                                    <input id="max_price" onblur="if(this.value == '') { this.value ='Max Price'; }" onfocus="if(this.value =='Max Price') { this.value = ''; }" class="search_max_price" name="max_price" type="text" value="Max Price" />
+
+
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                <li class="submit-button">
+                                                    <button name="submit" id="directory-submit-search-view" class="form-submit"><i class="icon-search6"></i></button>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Page Section //Schools -->
+<div class="page-section " style="margin-top: 0px; padding-top: 10px; padding-bottom: 30px; margin-bottom: 0px; border-top: 0px #e0e0e0 solid; border-bottom: 0px #e0e0e0 solid;">
+    <!-- Container Start -->
+    <div class="container">
+        <div class="row">
+            <div class="section-fullwidth">
+                <!--SCHOOLS-->
+                <div class="element-size-100">
+                    <div class="cs-section-title col-md-6">
+                        <h2>Schools</h2>
+                    </div>
+                    <div class="cs-section-title col-md-5">
+                        <a href="~/School" class="btn btn-primary pull-right">View All</a>
+                    </div>
+                    <div class="wow">
+                        <div class="cs-team team-simple col-md-12 ">
+                            <ul id="cs-filterable" class="cs-filterable agent-listing">
+                                @if (Model != null && Model.Count > 0)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                    <li>
+                                        <p style="display: block; margin-left: 30px; margin-bottom: 3px;">@item.Name</p>
+                                        <figure>
+                                            <a href="http://directory.chimpgroup.com/author/gomo/?&#038;action=detail&#038;uid=57">
+                                                <img src="@item.LogoPath" alt="" />
+                                            </a>
+                                        </figure>
+                                    </li>    
+                                    }
+                                }
+                                else
+                                {
+                                    <li>
+                                        <p style="display: block; margin-left: 30px; margin-bottom: 3px;">No Data Found</p>
+                                    </li>   
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="element-size-100">
+                    <div class="col-md-12 cs-section-title">
+                        <h2>Recently Added</h2>
+                    </div>
+                    <div class="cs-directory grid_listing">
+
+                        <div class="cs-blogslide ">
+
+                            <div class="col-md-3">
+                                <article>
+                                    <div class="directory-section">
+                                        <div class="cs_thumbsection">
+                                            <figure>
+                                                <a href="http://directory.chimpgroup.com/directory/furnished-villa-for-sale/">
+                                                    <span class="cs-paid-ad">Featured</span>
+                                                    <img alt="" src="http://directory.chimpgroup.com/wp-content/uploads/property-dir05-370x280.jpg">
+                                                </a>
+                                            </figure>
+                                        </div>
+
+                                        <div class="content_info">
+                                            <h2 itemprop="name" itemscope itemtype="http://schema.org/Thing">
+                                                <a href="http://directory.chimpgroup.com/directory/furnished-villa-for-sale/">Furnished Villa for Sale
+                                                </a>
+                                            </h2>
+                                            <div class="dr_pricesection" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                                <span itemprop="price">€45,000</span>
+                                            </div>
+                                            <!-- Directory ShortOption -->
+                                            <div class="dr_shortoption">
+                                                <div class="cs-organizer">
+                                                    <figure>
+                                                        <a class="info-thumb" href="http://directory.chimpgroup.com/author/kennethhanson/?&#038;action=detail&#038;uid=11">
+                                                            <img height="30" width="30" src="http://directory.chimpgroup.com/wp-content/uploads/directory-individuals-user-25.jpg" alt="" /></a>
+                                                    </figure>
+                                                    <span class="organizer-name">
+                                                        <a href="http://directory.chimpgroup.com/author/kennethhanson/?&#038;action=detail&#038;uid=11">Kenneth Hanson</a>
+                                                    </span>
+                                                </div>
+                                                <div class="dr_location post-1314">
+                                                    <a class="cs-add-wishlist tolbtn" data-target="#loginSection" data-toggle="modal" data-original-title="Add to Favourite" href="#">
+                                                        <i class="icon-star-o"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,161 @@
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Documents\Visual Studio 2012\Projects\IPSTreeSystem\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.1\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.2\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.3\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.4\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\IPSTree System\Web Application\IPSTreeSystem Ver 4.5\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 2.0\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.0\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\DataLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\DomainModel.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\IPS Application\Recruitment System\Website V 3.1\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\tJobs\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\DomainModel.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\DomainModel.pdb
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\ahuss\Downloads\SchoolGapZip\books\BusinessLayer\obj\Debug\BusinessLayer.pdb
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\BusinessLayer.dll
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\BusinessLayer.pdb
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\DataLayer.dll
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\DomainModel.dll
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\EntityFramework.dll
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\DataLayer.pdb
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\DomainModel.pdb
+E:\Projects\SchoolGap\Books\BusinessLayer\bin\Debug\EntityFramework.xml
+E:\Projects\SchoolGap\Books\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+E:\Projects\SchoolGap\Books\BusinessLayer\obj\Debug\BusinessLayer.dll
+E:\Projects\SchoolGap\Books\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\DataLayer.dll
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\DomainModel.dll
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\DomainModel.pdb
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Wajih\arsalan bhai\projects\BooksSystem\BusinessLayer\obj\Debug\BusinessLayer.pdb

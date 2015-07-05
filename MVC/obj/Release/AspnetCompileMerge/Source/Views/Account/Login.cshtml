@@ -1,0 +1,110 @@
+﻿@model MVC.Models.LoginModel   
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@section head{
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#loginform").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Email: {validators: {notEmpty: {},emailAddress: {}}},
+                    Password: { validators: { notEmpty: {} } }
+                    
+
+                }
+            });
+        });
+    </script>
+}
+
+<header class="page-header">
+    <h1 class="page-title">Login</h1>
+</header>
+
+<div id="primary" class="">
+    <div id="content" class="container" role="main">
+
+        <article  class="page hentry">
+            <div class="entry-content">
+                
+                
+                @if (!@Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+                }
+                
+
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @id = "loginform", @name = "loginform" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email)
+                                @Html.TextBoxFor(m => m.Email)
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(m => m.Password)
+                                @Html.ValidationMessageFor(m => m.Password)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12"><i class="icon-help-circled"></i> @Html.ActionLink("Forgot Password?", "ForgotPassword")</div>
+                    </div>
+                    
+                    @*
+                    <div class="col-md-12">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox", @for="RememberMe" })
+                    </div>*@
+                    <div class="row">
+                        <div class="col-md-12" ><i class="icon-user"></i>New User?  @Html.ActionLink("Register Now", "Register")</div>
+                    </div>
+                    
+                    <div class="row">
+                        <p></p>
+                        <div class="col-md-12 login-submit">
+                            <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Sign In" />
+                        </div>
+                    </div>
+                    
+                }
+
+
+            </div>
+        </article>
+    </div>
+    <!-- #content -->
+  
+</div>
+<!-- #primary -->
+
+
+
+

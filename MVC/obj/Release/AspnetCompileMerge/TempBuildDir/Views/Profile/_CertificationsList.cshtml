@@ -1,0 +1,37 @@
+﻿@using DomainModel
+@model System.Collections.Generic.IList<DomainModel.Certification>
+
+<table >
+    <thead>
+        <tr>
+            <th>Certificate</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Institute</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+         @if (Model.Count == 0)
+        {
+            <tr>
+                <td colspan="6">You currently have no education.</td>
+            </tr>
+        }
+
+        @foreach (Certification cert in Model)
+        {
+            <tr>
+                <td>@cert.Certificate</td>
+                <td>@cert.TimeFrom.Value.ToString("dd MMMM, yyyy")</td>
+                <td>@cert.TimeTo.Value.ToString("dd MMMM, yyyy")</td>
+                <td>@cert.TrainingInstitute</td>
+                <td><a class="btnEdit" href="../Certification/Edit?id=@cert.ID">Edit</a></td>
+                <td><a class="btnDelete" href="../Certification/Delete?id=@cert.ID">Delete</a></td>
+            </tr>
+
+        }
+    
+    </tbody>
+</table>

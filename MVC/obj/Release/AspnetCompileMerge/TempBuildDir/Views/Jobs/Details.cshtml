@@ -1,0 +1,189 @@
+﻿@using System.Web.Configuration
+@model MVC.Models.JobDetails
+
+@{
+    ViewBag.Title = "Details | Jobs";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+@if(Model!=null){
+
+    @section Head{
+    
+        <link href="~/content/css/jobDetails.css" rel="stylesheet" />
+        <script src="~/content/js/jobDetails.js"></script>
+        <script>
+            jQuery(document).ready(function() {
+                jQuery('#email-link').magnificPopup({
+                    disableOn: 700,
+                    type: 'iframe',
+                    mainClass: 'mfp-fade',
+                    removalDelay: 160,
+                    preloader: false,
+                    callbacks: {
+                        open: function () { window.location.hash = ""; },
+                        close: function () {
+                            window.location.hash = "#email-link";
+                        }
+                    },
+                    fixedContentPos: true
+                }); //End Magnific Popup
+            });
+        </script>
+        
+    }
+    
+    
+    <div class="page-header">
+        <h1 class="page-title">@Model.Job.Title</h1>
+        <h2 class="page-subtitle">
+
+            <ul>
+
+                <li class="job-type @if (Model.Job.JobType.ToLower() == "part time")
+                                    {
+                                        @("part-time")
+                                    }
+                                    else
+                                    {
+                                        if (Model.Job.JobType.ToLower() == "full time")
+                                        {
+                                            @("full-time")
+                                        }
+                                        else
+                                        {@("freelance")}  
+                                    }">@Model.Job.JobType</li>
+                <li class="job-company">
+                    <a href="../../Company/?id=@Model.Company.ID" target="_blank">@Model.Company.Name</a>
+                </li>
+                <li class="job-location"><i class="icon-location"></i>@Model.Job.JobLocation</li>
+                <li class="job-date-posted"><i class="icon-calendar"></i>Posted <span data-date="@Model.Job.PostDate.Value.ToString("yyyy-M-d")"></span></li>
+                @if (@Model.Company.Username == User.Identity.Name)
+                             {
+                                 <li class="job-admin-controls"> @Html.ActionLink("Edit","Edit","Jobs",new {@job_id=@Model.Job.Job_ID},null)</li>
+                                 @*<li class="job-admin-controls"><a href="#">Close</a></li>*@
+                                <li class="job-admin-controls">@Html.ActionLink("View Applicants","Applicants","Jobs",new {@job_id=@Model.Job.Job_ID},null)</li>
+                             }
+            </ul>
+
+        </h2>
+    </div>
+    
+    <div id="primary" class="">
+        <div id="content" class="container" role="main">
+
+            <article class="page hentry">
+                <div class="entry-content"> 
+    
+                    <section  class="homepage-widget apply-now-container " id="application-process" style="display: none;">
+                        <div class="callout container">
+                            <div class="callout-description"></div>
+                        </div>
+                    </section>
+
+
+                    <div class="job-overview-content row">
+                        
+                        <div  class="job-overview col-md-9">
+                           
+                            <h2 class="job-overview-title">Job Summary</h2>
+                            <p>@Html.Raw(@Model.Job.Summary)</p>
+                            
+                            <div>
+                                <h2>Details</h2>
+                                <p>@Html.Raw(@Model.Job.Details)</p>
+                            </div>
+                            <div>
+                                <h2>Other Requirements</h2>
+                                <ul>
+                                    <li><span>Degree: </span>@Model.Job.Degree</li>
+                                    <li>Minimum Experience @Model.Job.Min_Exp Year(s) @if (Model.Job.Max_Exp !=null && Model.Job.Max_Exp>0){@("& Max ") @Model.Job.Max_Exp @(" Year(s)")}</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="job-overview col-lg-3 right-column" style="  border-left: 2px solid rgb(224, 224, 224);">
+                             <h2 class="job-overview-title">About Company</h2>
+
+													
+                            <div class="single-job-spotlight">
+                                <div class="single-job-spotlight-feature-image">
+                                    <a href="../../Company/?id=@Model.Company.ID" rel="bookmark">
+                                        <img  src="../../content/static/@Model.Company.Logo" class="wp-post-image" alt="company logo" style="max-height: 175px;">		</a>
+                                </div>
+
+                                <div class="single-job-spotlight-content">
+                                    <p class="seperate-section"><i class="icon-newspaper"></i><a href="../../Company/?id=@Model.Company.ID" target="_blank">@Model.Company.Name</a></p>
+                                    <p class="seperate-section">@if (Model.Company.About.Length > 150)
+                                       {
+                                          @Html.Raw(@Model.Company.About.Substring(0, 150))
+                                       }
+                                       else
+                                       {@Model.Company.About
+                                       }...</p>
+                                    <div class="action">
+                                        <div class="seperate-section"><i class="icon-location"></i>Location: @Model.Company.Headquarters</div>
+                                        <div class="seperate-section"><i class="icon-calendar"></i>Founded: @Model.Company.Founded.Value.Year</div>
+                                        <div class="seperate-section"><i class="icon-link"></i>Website: @Model.Company.Website</div>
+                                        <div class="seperate-section"><i class="icon-plus"></i><a href="../../Company/?id=@Model.Company.ID" target="_blank">Read More</a></div>
+                                    </div>
+                                </div>
+                            </div>											</div>
+
+                    </div>
+
+                    <section  class="homepage-widget apply-now-container">
+                        <div class="callout container">
+                            <div class="callout-description">
+                                <ul>
+                                    <li ><a href="#" onclick="window.print()"> <i class="icon-print"></i>Print</a></li>
+                                    <li class="disable"><i class="icon-bookmark"></i>Bookmark</li>
+                                    <li class=""><a href="../Email?job_id=@Model.Job.Job_ID" id="email-link"><i class="icon-mail"></i> Email </a></li>
+                                    <li class="disable"><i class="icon-share"></i> Share</li>
+                                </ul>
+                            </div>
+
+                            <div class="callout-action">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    if (User.IsInRole("User"))
+                                    {
+                                        <a href="#" class="button apply" id="btnApplyNow" data-id="@Model.Job.Job_ID">Apply Now</a>
+                                    }
+                                    else
+                                    {
+                                        <ul>
+                                            <li><span >Admin cannot apply to job</span></li>
+                                        </ul>
+                                        
+                                    }
+
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Apply", "Login", "Account", new { @returnUrl = Url.Action(ViewContext.RouteData.Values["action"].ToString()) }, new { @class = "button apply" })
+                                }
+                                
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                </div>
+            </article>
+        </div>
+    </div>
+
+
+}
+else
+{
+<div class="page-header">
+    <h1 class="page-title">Job Not Available</h1>
+    
+</div>
+}

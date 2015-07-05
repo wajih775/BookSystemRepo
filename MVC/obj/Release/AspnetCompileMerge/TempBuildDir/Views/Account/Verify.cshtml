@@ -1,0 +1,35 @@
+﻿@model bool
+
+@{
+    ViewBag.Title = "Verification | Jobs";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<header class="page-header">
+    <h1 class="page-title">Registration Verification Status</h1>
+</header>
+
+<div id="primary" class="">
+    <div id="content" class="container" role="main">
+        <article  class="page hentry">
+            <div class="entry-content">
+                <div class="job-manager-form">
+                    <div class="field account-sign-in">
+                        @if (Model){@Html.Raw("<p style='font-size: 15px;color: black;margin: 0 auto;'>Thank you for confirming your email address with SchoolGap Jobs.</p><p style='font-size: 15px;color: black;margin: 0 auto;'> Your registration is complete </p> <p style='font-size: 15px;color: black;margin: 0 auto;'>You can go to <a href='../../Account/Login'>login page</a> and login with your authentication details </p>")}
+                else
+                {@Html.Raw("<p style='font-size: 15px;color: red;margin: 0 auto;'>Oops, verification failed. Please follow one of the following steps:</p>" +
+                           "<ul>" +
+                           "<li>Not Registered: Retry to register your account.</li>" +
+                           "<li>Already Activated: Go to login page, and try to login</li>" +
+                           "<li>Invalid Link: Your verification link has expired.</li>" +
+                           "<li>If none of these steps helped, please contact us directly from <a href='#'>here</a>, we are always ready to help you.</li>" +
+                           "</ul>")
+  
+                }
+                    </div>
+                </div>
+                
+            </div>
+        </article>
+    </div>
+</div>

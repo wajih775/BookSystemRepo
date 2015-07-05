@@ -1,0 +1,105 @@
+﻿@model DomainModel.Certification
+
+@{
+    ViewBag.Title = "Add | Certification";
+    Layout = "~/Views/Shared/_MinLayout.cshtml";
+}
+
+
+@section head{
+
+    
+    <script type="text/javascript">
+        jQuery(function() {
+            jQuery('.datepicker').datepicker({ format: "dd-mm-yyyy" }); //Initialise any date pickers
+        });
+    </script>
+
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#frmCertification").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Certificate: { validators: { notEmpty: {} } },
+                    TrainingInstitute: { validators: { notEmpty: {} } },
+                    TimeFrom: { validators: { notEmpty: {}, date: { format: 'DD-MM-YYYY', message: 'Invalid Date Format' } } },
+                    TimeTo: { validators: { notEmpty: {}, date: { format: 'DD-MM-YYYY', message: 'Invalid Date Format' } } }
+
+                }
+            });
+        });
+    </script>
+}
+
+
+<h2 class="modal-title">Certification</h2>
+
+
+ @if (!@Html.ViewData.ModelState.IsValid)
+ {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+ }
+
+
+
+                @using (Html.BeginForm("Index", "Certification", FormMethod.Post, new { id = "frmCertification" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Certificate)
+                            @Html.TextBoxFor(m => m.Certificate, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Certificate)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.TimeFrom)
+                            @Html.TextBoxFor(m => m.TimeFrom, new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(m => m.TimeFrom)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.TimeTo)
+                            @Html.TextBoxFor(m => m.TimeTo, new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(m => m.TimeTo)
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.TrainingInstitute)
+                            @Html.TextBoxFor(m => m.TrainingInstitute, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.TrainingInstitute)
+                        </div>
+                    </div>
+                    
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.TypeOfTraining)
+                            @Html.TextBoxFor(m => m.TypeOfTraining, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.TypeOfTraining)
+                        </div>
+                    </div>
+                  
+                    
+                    <p class="submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Add" />
+                    </p>
+                }

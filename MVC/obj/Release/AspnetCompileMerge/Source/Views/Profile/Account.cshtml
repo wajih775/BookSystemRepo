@@ -1,0 +1,308 @@
+﻿@model DomainModel.UserProfile
+
+@{
+    ViewBag.Title = "Accounts Settings";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section head{
+
+    
+    <script type="text/javascript">
+        jQuery(function() {
+            jQuery('.datepicker').datepicker({ format: "dd-mm-yyyy" }); //Initialise any date pickers
+        });
+    </script>
+
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#accountUpdateForm").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Email: { validators: { notEmpty: {}, emailAddress: {} } },
+                    FirstName: { validators: { notEmpty: {} } },
+                    LastName: { validators: { notEmpty: {} } },
+                    Country: { validators: { notEmpty: {} } },
+                    City: { validators: { notEmpty: {} } },
+                    DOB: { validators: { notEmpty: {}, date: { format: 'DD-MM-YYYY', message: 'Invalid Date Format' } } },
+                    Nationality: { validators: { notEmpty: {} } },
+                    NoOfDependents: { validators: { digits: {} } },
+                    Website: { validators: {uri: {message: 'The website address is not valid'}}},
+                    Mobile: { validators: { digits: {} } },
+                    Phone: { validators: { digits: {} } },
+                    Fax: { validators: { digits: {} } },
+                    JobTitle: {
+                        validators: {
+                            stringLength: {
+                                max: 45,
+                                message: 'The Job Title must be less than 45 characters'
+                            }
+                        }
+                    },
+                    ShortDescription: {
+                        validators: {
+                            stringLength: {
+                                max: 250,
+                                message: 'Short Description must be less than 250 characters'
+                            }
+                        }
+                    },
+                    LongDescription: {
+                        validators: {
+                            stringLength: {
+                                max: 500,
+                                message: 'The Job Title must be less than 500 characters'
+                            }
+                        }
+                    }
+
+
+                }
+            });
+        });
+    </script>
+}
+    
+
+    <header class="page-header">
+    <h1 class="page-title">Account Settings </h1>
+</header>
+
+
+<div id="primary" class="content-area">
+    <div id="content" class="container" role="main">
+
+        <article id="post-2053" class="post-2053 page type-page status-publish hentry">
+            <div class="entry-content">
+               
+
+                    
+                 
+                 @if (!@Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+                }
+
+
+
+                @using (Html.BeginForm("Account", "Profile", FormMethod.Post, new { id = "accountUpdateForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.TextBoxFor(m=>m.Image,new {@type="hidden"})
+                    <h2>Basic Information</h2>
+                    
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.FirstName)
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FirstName)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.LastName)
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.LastName)
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Country)
+                            @Html.DropDownListFor(m => m.Country, ViewData["Countries"] as SelectList)
+                            @Html.ValidationMessageFor(m => m.Country)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.City)
+                            @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.City)
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Gender)
+                            <br />
+                            @Html.RadioButtonFor(m => m.Gender, "Male", new { @checked = "checked", id = "option-male" })
+                            <label for="option-male">Male</label>
+                            @Html.RadioButtonFor(m => m.Gender, "Female", new { id = "option-female" })
+                            <label for="option-female">Female</label>
+                            @Html.ValidationMessageFor(m => m.Gender)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.DOB)
+                            @Html.TextBoxFor(m => m.DOB,"{0:dd/MM/yyyy}", new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(m => m.DOB)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Nationality)
+                            @Html.TextBoxFor(m => m.Nationality, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Nationality)
+                        </div>
+                    </div>
+            </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NoOfDependents)
+                            @Html.TextBoxFor(m => m.NoOfDependents, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.NoOfDependents)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Website)
+                            @Html.TextBoxFor(m => m.Website, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Website)
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.VisaStatus)
+                            @Html.DropDownListFor(m => m.VisaStatus,new List<SelectListItem>
+                            {
+                                new SelectListItem{Selected = true,Text = "None",Value ="None"},
+                                new SelectListItem{Selected = false,Text = "Transferable",Value ="Transferable"}
+                            }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.VisaStatus)
+                        </div>
+                    </div>
+                    
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.MartialStatus)
+                            @Html.DropDownListFor(m => m.MartialStatus,new List<SelectListItem>
+                            {
+                                new SelectListItem{Selected = true,Text = "Single",Value ="Single"},
+                                new SelectListItem{Selected = false,Text = "Married",Value ="Married"}
+                            }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.MartialStatus)
+                        </div>
+                    </div>
+                    </div>
+                    <h2>Contact Information</h2>
+                    <div class="row">
+                     <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Mobile)
+                            @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Mobile)
+                        </div>
+                    </div>
+                    
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Phone)
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Phone)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Fax)
+                            @Html.TextBoxFor(m => m.Fax, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Fax)
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.PoBox)
+                                @Html.TextBoxFor(m => m.PoBox, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.PoBox)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address1)
+                                @Html.TextBoxFor(m => m.Address1, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Address1)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address2)
+                                @Html.TextBoxFor(m => m.Address2, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Address2)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Profile Information</h2>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.JobTitle)
+                            @Html.TextBoxFor(m => m.JobTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.JobTitle)
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ShortDescription)
+                            @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control textarea200" })
+                            @Html.ValidationMessageFor(m => m.ShortDescription)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.LongDescription)
+                            @Html.TextAreaFor(m => m.LongDescription, new { @class = "form-control textarea200" })
+                            @Html.ValidationMessageFor(m => m.LongDescription)
+                        </div>
+                    </div>
+                    </div>
+                     
+                    
+                    <p class="login-submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Update" />
+                    </p>
+                }
+
+                
+            </div>
+        </article>
+        <!-- #post -->
+    </div>
+    <!-- #content -->
+
+
+</div>

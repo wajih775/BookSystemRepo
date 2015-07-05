@@ -1,0 +1,71 @@
+﻿@model MVC.Models.ModelEmail
+
+@{
+    ViewBag.Title = "Email | Jobs";
+    Layout = "~/Views/Shared/_MinLayout.cshtml";
+}
+
+
+@section head{
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#frmEmail").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Name: { validators: { notEmpty: {} } },
+                    EmailAddress: { validators: { notEmpty: {}, emailAddress: {} } }
+                }
+            });
+        });
+    </script>
+}
+
+
+
+<h2 class="modal-title">Send Job Link Via Email</h2>    
+
+
+ @if (!@Html.ViewData.ModelState.IsValid)
+ {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+ }
+
+
+
+                @using (Html.BeginForm("Email", "Jobs", FormMethod.Post, new { id = "frmEmail" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.TextBoxFor(m=>m.Job_id,new {@type="hidden"})
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Name)
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Name)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                             @Html.LabelFor(m => m.EmailAddress)
+                            @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EmailAddress)
+                        </div>
+                    </div>
+                    
+                    <p class="submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Send" />
+                    </p>
+                }
+
+

@@ -1,0 +1,104 @@
+﻿@model MVC.Models.VerificationModel 
+
+@{
+    ViewBag.Title = "Resend Verification Code | Jobs";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section head{
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#resendFrm").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Email: {validators: {notEmpty: {},emailAddress: {}}}
+                }
+            });
+        });
+    </script>
+}
+
+
+<header class="page-header">
+    <h1 class="page-title">Resend Verification Code</h1>
+</header>
+
+
+<div id="primary" class="">
+    <div id="content" class="container" role="main">
+
+        <article  class="page hentry">
+            <div class="entry-content">
+                
+                
+                @if (!@Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+                }
+                
+                @if (Request.QueryString["invalid"] != null)
+                {
+                    <div class="job-manager-error">Your account is not activated, please verify your account.</div>
+                    
+                }
+                
+               @if (Request.QueryString["sent"] != null)
+                         {
+                             <div class="row job-manager-form"><div class="field account-sign-in">
+                                                                   We have sent you an email containing a link for email confirmation. Please check your email.
+                                                               </div> </div>
+                             
+                   
+                    
+                         }
+               else
+               {
+  using (Html.BeginForm("Resend", "Account", FormMethod.Post, new { @id = "resendFrm", @name = "resendFrm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email)
+                                @Html.TextBoxFor(m => m.Email)
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                         
+                   
+                    
+                    <div class="row">
+                        <p></p>
+                        <div class="col-md-12 login-submit">
+                            <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Resend Verification Code" />
+                        </div>
+                    </div>
+                    
+                }
+               }
+
+                
+
+
+            </div>
+        </article>
+    </div>
+    <!-- #content -->
+  
+</div>
+<!-- #primary -->

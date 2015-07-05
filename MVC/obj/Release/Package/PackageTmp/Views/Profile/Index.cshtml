@@ -1,0 +1,569 @@
+﻿@using System.Activities.Statements
+@using DomainModel
+@model MVC.Models.Profile
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+
+
+
+@section head{
+    
+    <link href="~/content/css/profile.css" rel="stylesheet" />
+    <link href="~/content/css/profile-response.css" rel="stylesheet" />
+    
+    <script src="~/content/js/bootstrap.min.js"></script>
+    <script src="~/content/plugins/jqueryFileUpload/js/jquery.ui.widget.js"></script>
+    <script src="~/content/plugins/jqueryFileUpload/js/jquery.iframe-transport.js"></script>
+    <script src="~/content/plugins/jqueryFileUpload/js/jquery.fileupload.js"></script>
+    <script src="~/content/js/profile.js"></script>
+    
+    
+}
+
+
+<div class="wraper">
+
+        
+    <section class="home-header border-bottom padding-block">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-5 col-lg-5 text-right">
+                    <!-- Your foto -->
+                    <div class="foto" id="user-display-image">
+                        <img src="../../content/static/@if (Model.ProfileDetails.Image != null)
+                                                       {
+                                                           @(Model.ProfileDetails.Image)
+                                                       }
+                                                       else
+                                                       {@("no-dp.jpg")
+                                                       }" alt="Display Picture" id="user-photo">
+                        
+                        @if (User.IsInRole("User"))
+                        {
+                            <div id="progress"><img src="~/content/images/loading.gif" /><span class="count">0%</span></div>
+                        <div class='user-dp-upload' id="btn-upload-image">
+                            <ul>
+                                <li><a href="#modal-view" class="popup-modal"> <div class="btn-group">
+                                                                                   <span class="btn btn-success fileinput-button"><i class="glyphicon glyphicon-picture"></i> <span>View Photo</span>
+                                                                                   </span></div></a></li>
+                                <li>
+                                    <div class="btn-group">
+                                        <span class="btn btn-success fileinput-button">
+                                            <i class="glyphicon glyphicon-camera"></i>
+                                            <span>Upload Photo</span>
+                                            <input type="file" id="fileupload" name="files[]" accept="image/jpg, image/jpeg, image/png,image/bmp"  data-url="../Upload/Photo" />
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        }
+                        
+                        
+
+                    </div>
+                    <!-- end your foto -->
+                </div>
+                <div class="col-xs-12 col-sm-7 col-lg-7">
+                    <!-- Your Name -->
+                    <h1 class="title">@Model.ProfileDetails.FirstName  @Model.ProfileDetails.LastName</h1>
+                    <!-- Your Profession -->
+                    <h3 class="sub-title">@if(!string.IsNullOrEmpty(Model.ProfileDetails.JobTitle)){@(Model.ProfileDetails.JobTitle)}else{@("No Job Title");}</h3>
+                    <!-- social icon -->
+                    <div class="social">
+                        @if(!string.IsNullOrEmpty(Model.ProfileDetails.ShortDescription)){@(Model.ProfileDetails.ShortDescription)}else{@("No Description About You.");}
+                    </div>
+                    <!-- end social icon -->
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+        
+    
+    <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                    <img class="logo-page" src="../../content/images/profile.png" alt="Profile">
+                    <!-- Title Page -->
+                    <h2 class="title">Profile</h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title">A Brief About Me</h4>
+                </div>
+                
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+       
+    
+    <section class="content border-bottom padding-block">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-lg-7">
+                    <h3 class="title">@if(!string.IsNullOrEmpty(Model.ProfileDetails.JobTitle)){@("Hello, I Am "+ Model.ProfileDetails.JobTitle)}else{@("No Title");}</h3>
+                    <p>@if(!string.IsNullOrEmpty(Model.ProfileDetails.LongDescription)){@(Model.ProfileDetails.LongDescription)}else{@("No Long Description");}</p>
+                    @if (!string.IsNullOrEmpty(Model.ProfileDetails.CV))
+                    {
+                        <a href="../../content/static/@Model.ProfileDetails.CV" class="btn btn-color hover-animate" id="download-cv">Download CV</a>
+                    }
+                    else
+                    {
+                       
+                    }
+                    
+                    
+                    @if (User.IsInRole("User"))
+                    {
+                        <div class="btn-group">
+                        <span class="btn btn-success fileinput-button">
+                            <i class="glyphicon glyphicon-upload"></i>
+                            <span>Upload CV</span>
+                            <input type="file" id="cvUpload" name="files[]" accept="application/msword,application/pdf"  data-url="../Upload/Photo" />
+                            
+                            <div id="cvProgress">
+                                <div class="progress-bar-status"></div>
+                            </div>
+                        </span>
+                    </div>
+                    }
+                    
+
+                </div>
+                <div class="col-xs-12 col-sm-12 col-lg-5">
+                    <div class="block-grey">
+                        <table>
+                            <tbody><tr>
+                                       <td class="font-weight-m">Name</td>
+                                       <td class="text-right">@Model.ProfileDetails.FirstName  @Model.ProfileDetails.LastName</td>
+                                   </tr>
+                                <tr>
+                                    <td class="font-weight-m">Date of birth</td>
+                                    <td class="text-right">@Model.ProfileDetails.DOB.Value.ToString("dd MMMM, yyyy")</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">E-mail</td>
+                                    <td class="text-right"><a href="mailto:@User.Identity.Name">@Model.ProfileDetails.UserName</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">Address</td>
+                                    <td class="text-right">@Model.ProfileDetails.Address1</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">Phone</td>
+                                    <td class="text-right"><a href="tel:@Model.ProfileDetails.Phone">@Model.ProfileDetails.Phone</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">Website</td>
+                                    <td class="text-right"><a href="@Model.ProfileDetails.Website">@Model.ProfileDetails.Website</a></td>
+                                </tr>
+                            </tbody></table>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    
+    <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                    <img class="logo-page" src="../../content/images/exp.png" alt="Experience">
+                    <!-- Title Page -->
+                    <h2 class="title">Experience</h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title"></h4>
+                </div>
+                
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+    
+    <section class="content border-bottom padding-block">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="experience-timeline">
+                    @for(int i=0;i<Model.Experience.Count;i++) 
+                    {
+                        <div class="experience-block clearfix">
+                            <div class="meta">
+                                <span class="year"> @Model.Experience[i].StartDate.Value.Year -   @if (i == Model.Experience.Count - 1){@("Current")}else{@Model.Experience[i].EndDate.Value.Year} </span>
+                                <span class="company">@Model.Experience[i].CompanyName</span>
+                            </div> <!-- end .meta -->
+                            <div class="content">
+                                <h5>@Model.Experience[i].PositionInCompany</h5>
+                                <p>@Model.Experience[i].WorkDescription</p>
+                            </div> <!-- end .content -->
+                            <div class="icon">
+                                <i class="fa fa-envelope"></i>
+                            </div> <!-- end .icon -->
+                            @if (i != Model.Experience.Count-1){<div class="line"></div>}
+                        </div> <!-- end .experience-block -->
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    
+    
+    <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                    <img class="logo-page" src="../../content/images/edu.png" alt="Education">
+                    <!-- Title Page -->
+                    <h2 class="title">Education</h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title">Education Value</h4>
+                </div>
+               
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+    
+    <section class="active border-bottom padding-block" >
+        <div class="container overflow-auto">
+						
+            <div class="education clearfix">
+                @for (int i = 0; i < Model.Educations.Count; i++)
+                {
+                    <div class="item">
+                        <div class="marker"></div>
+                        <div class="content">
+                            <span>@Model.Educations[i].Institute</span>
+                            <h4>@Model.Educations[i].Degree</h4>
+                        </div>
+                        <div class="year">@Model.Educations[i].Country , @Model.Educations[i].CompletionDate.Value.Year</div>
+                    </div> <!-- end item -->
+                }
+
+                <div class="line"></div>
+            </div> <!-- end .education -->
+            	
+        </div> <!-- end .container -->
+    </section>
+    
+    
+    <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                    <img class="logo-page" src="../../content/images/cert.png" alt="Certifications & Skills">
+                    <!-- Title Page -->
+                    <h2 class="title">Certification & Skills</h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title"></h4>
+                </div>
+               
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+    
+    <section  class="active border-bottom padding-block" >
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Certifications </h4>
+                    @for (int i = 0; i < Model.Certifications.Count; i++)
+                    {
+                        <label class="progress-bar-label">@Model.Certifications[i].Certificate (@Model.Certifications[i].TrainingInstitute)</label>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                <span>Duration: @(  @Model.Certifications[i].TimeTo.Value.Subtract(@Model.Certifications[i].TimeFrom.Value).Days / 30 ) Month(s)</span>
+                            </div> <!-- end .progress-bar -->
+                        </div> <!-- end .progress -->                        
+                    }
+                    
+                </div> <!-- end .col-sm-6 -->
+                <div class="col-sm-6">
+                    <h4>Skills</h4>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-icons purple bold-list">
+                                @for (int i = 0; i < Model.Skills.Count; i=i+2)
+                                {
+                                    <li><i class="glyphicon glyphicon-arrow-right"></i>@Model.Skills[i].SkillName</li>  
+                                }
+                            </ul>
+                        </div> <!-- end .col-sm-6 -->
+                        <div class="col-sm-6">
+                            <ul class="list-icons purple bold-list">
+                                @for (int i = 1; i < Model.Skills.Count; i=i+2)
+                                {
+                                    <li><i class="glyphicon glyphicon-arrow-right"></i>@Model.Skills[i].SkillName</li>  
+                                }
+                            </ul>
+                        </div> <!-- end .col-sm-6 -->
+                    </div> <!-- end .row -->
+                </div> <!-- end .col-sm-6 -->
+            </div> <!-- end .row -->
+           
+       
+        </div> <!-- end .container -->
+    </section>
+    
+    
+    <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                    <img class="logo-page" src="../../content/images/lang.png" alt="Language">
+                    <!-- Title Page -->
+                    <h2 class="title">Languages </h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title"></h4>
+                </div>
+                
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+     
+    <section  class="active border-bottom padding-block" >
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    @for (int i = 0; i < Model.Languages.Count; i = i + 2)
+                    {
+                        <label class="progress-bar-label">@Model.Languages[i].Language</label>
+                        <div class="progress">
+                            @if (@Model.Languages[i].Level.ToLower() == "beginner")
+                            {
+                                <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33.33%;">
+                                    <span>33.33%</span>
+                                </div> <!-- end .progress-bar -->
+                            }
+                            
+                            @if (@Model.Languages[i].Level.ToLower() == "intermediate")
+                            {
+                                <div class="progress-bar" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66.66%;">
+                                    <span>66.66%</span>
+                                </div> <!-- end .progress-bar -->
+                            }
+                            
+                            @if (@Model.Languages[i].Level.ToLower() == "expert")
+                            {
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                    <span>100%</span>
+                                </div> <!-- end .progress-bar -->
+                            }
+                            
+                        </div>
+                        <!-- end .progress -->
+                    }
+                </div> <!-- end .col-sm-6 -->
+               
+                <div class="col-sm-6">
+                   
+                    @for (int i = 1; i < Model.Languages.Count; i = i + 2)
+                    {
+                        <label class="progress-bar-label">@Model.Languages[i].Language</label>
+                        <div class="progress">
+                            @if (@Model.Languages[i].Level.ToLower() == "beginner")
+                            {
+                                <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33.33%;">
+                                    <span>33.33%</span>
+                                </div> <!-- end .progress-bar -->
+                            }
+                            
+                            @if (@Model.Languages[i].Level.ToLower() == "intermediate")
+                            {
+                                <div class="progress-bar" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66.66%;">
+                                    <span>66.66%</span>
+                                </div> <!-- end .progress-bar -->
+                            }
+                            
+                            @if (@Model.Languages[i].Level.ToLower() == "expert")
+                            {
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                    <span>100%</span>
+                                </div> <!-- end .progress-bar -->
+                            }
+                            
+                        </div>
+                        <!-- end .progress -->
+                    }
+
+                </div> <!-- end .col-sm-6 -->
+
+            </div> <!-- end .row -->
+           
+       
+        </div> <!-- end .container -->
+    </section>
+    
+    
+    
+    <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                    <img class="logo-page" src="../../content/images/ref.png" alt="Reference">
+                    <!-- Title Page -->
+                    <h2 class="title">References </h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title"></h4>
+                </div>
+               
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    
+    
+    
+     
+    <section  class="active border-bottom padding-block" >
+        <div class="container">
+            
+            @for (int i = 0; i < Model.References.Count; i++)
+            {
+                <div class="row">
+                    
+                    @try
+                    {
+                        if (@Model.References.Count > i*2)
+                        {
+                            <div class="col-sm-6">
+
+                                <div class="row">
+                                    <div class="blog-post-comments">
+                                        <div class="comment">
+                                            <div class="inner clearfix">
+                                                <div class="image">
+                                                    <img src="../../content/static/no-dp.jpg" alt="alt text" class="img-responsive"></div>
+                                                <div class="content">
+                                                    <h5>@Model.References[i*2].Name</h5>
+                                                    <div>@Model.References[i*2].JobTitle @("@") @Model.References[i*2].CompanyName </div>
+                                                    <span class="meta"><a href="mailto:@Model.References[i*2].EmailAddress">@Model.References[i*2].EmailAddress </a></span>
+                                                    <a href="" class="reply">@Model.References[i*2].PhoneNumber<i class="glyphicon glyphicon-phone"></i></a>
+                                                </div>
+                                                <!-- end .content -->
+                                            </div>
+                                            <!-- end .inner -->
+                                        </div>
+                                        <!-- end .comment -->
+
+                                    </div>
+                                </div>
+                                <!-- end .row -->
+                            </div>
+                            <!-- end .col-sm-6 -->
+                        }
+                       
+                    }
+                    catch
+                    {
+                    }
+                    
+                    
+
+                    @try
+                    {
+
+                        if (@Model.References.Count > (2*i) + 1)
+                        {
+                            <div class="col-sm-6">
+
+                                <div class="row">
+                                    <div class="blog-post-comments">
+                                        <div class="comment">
+                                            <div class="inner clearfix">
+                                                <div class="image">
+                                                    <img src="../../content/static/no-dp.jpg" alt="alt text" class="img-responsive"></div>
+                                                <div class="content">
+                                                    <h5>@Model.References[(2*i) + 1].Name</h5>
+                                                    <div>@Model.References[(2*i) + 1].JobTitle @("@") @Model.References[(2*i) + 1].CompanyName</div>
+                                                    <span class="meta"><a href="mailto:@Model.References[(2*i) + 1].EmailAddress">@Model.References[(2*i) + 1].EmailAddress </a></span>
+                                                    <a href="" class="reply">@Model.References[(2*i) + 1].PhoneNumber<i class="glyphicon glyphicon-phone"></i></a>
+                                                </div>
+                                                <!-- end .content -->
+                                            </div>
+                                            <!-- end .inner -->
+                                        </div>
+                                        <!-- end .comment -->
+
+                                    </div>
+                                </div>
+                                <!-- end .row -->
+                            </div>
+                            <!-- end .col-sm-6 --> 
+                        }
+                        
+                    }
+                    catch
+                    {
+                        
+                    }
+                    
+
+
+
+                </div> <!-- end .row -->
+            }
+            
+            
+           
+       
+        </div> <!-- end .container -->
+    </section>
+    
+
+</div>
+
+
+
+
+<div id="modal-view" class="mfp-hide white-popup-block">
+    <h3 style="border-bottom: 3px solid gray;">Profile Image</h3>
+    <div style="text-align: center;"><img style="max-width: 500px;  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);" src="../../content/static/@if (Model.ProfileDetails.Image != null)
+                                                       {
+                                                           @(Model.ProfileDetails.Image)
+                                                       }
+                                                       else
+                                                       {@("no-dp.jpg")
+                                                       }"/></div>
+	
+	
+</div>

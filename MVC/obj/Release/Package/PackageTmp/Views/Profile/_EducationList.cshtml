@@ -1,0 +1,37 @@
+﻿@using DomainModel
+@model IList<DomainModel.Education>
+
+<table >
+    <thead>
+        <tr>
+            <th>Institute</th>
+            <th>Country</th>
+            <th>Degree</th>
+            <th>End Date</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+         @if (Model.Count == 0)
+        {
+            <tr>
+                <td colspan="6">You currently have no education.</td>
+            </tr>
+        }
+
+        @foreach (Education edu in Model)
+        {
+            <tr>
+                <td>@edu.Institute</td>
+                <td>@edu.Country</td>
+                <td>@edu.Degree</td>
+                <td>@edu.CompletionDate.Value.ToString("dd MMMM, yyyy")</td>
+                <td><a class="btnEdit" href="../Education/Edit?id=@edu.ID">Edit</a></td>
+                <td><a class="btnDelete" href="../Education/Delete?id=@edu.ID">Delete</a></td>
+            </tr>
+
+        }
+    
+    </tbody>
+</table>

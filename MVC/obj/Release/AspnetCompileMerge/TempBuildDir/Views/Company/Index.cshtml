@@ -1,0 +1,267 @@
+﻿@model DomainModel.Company
+
+@{
+    ViewBag.Title = "Company";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section head{
+    
+    <link href="~/content/css/profile.css" rel="stylesheet" />
+    
+
+    
+}
+
+<div class="wraper">
+
+    <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                    <img class="logo-page" src="../../content/static/@if (Model != null)
+                                                {
+                                                    if (!string.IsNullOrEmpty(Model.Logo))
+                                                    {
+                                                        @Model.Logo
+                                                    }
+                                                    else
+                                                    {
+                                                        @("no-logo.png")
+  
+                                                    }
+                                                }" alt="No Logo">
+                    <!-- Title Page -->
+                    <h2 class="title">@if (Model != null)
+                                      {
+                                          if (!string.IsNullOrEmpty(Model.Name))
+                                          {
+                                              @Model.Name
+                                          }
+                                          else
+                                          {
+ @("Company Name") 
+                                          }
+                                      }</h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title">A Brief About Company</h4>
+                </div>
+                <div class="col-xs-4 col-sm-1 col-lg-1 text-right">
+                    
+                    @if (User.Identity.Name == @Model.Username)
+                    {
+                        @Html.ActionLink("Edit","Edit","Company")
+                    }
+                    
+                   
+                    
+
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+       
+    
+    <section class="content border-bottom padding-block">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                @if (Model != null)
+                {
+                if (!string.IsNullOrEmpty(Model.About))
+                {
+                   @Html.Raw(@Model.About)
+                }
+                else
+                {
+                    @("No information provided")
+                   
+                }
+                }else
+                {
+                    @("No information provided")
+                   
+                }
+                
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    
+    
+        <section class="head">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-8 col-sm-11 col-lg-11">
+                   
+                    <!-- Title Page -->
+                    <h2 class="title">Details</h2>
+                    <!-- Description Page -->
+                    <h4 class="sub-title"></h4>
+                </div>
+               
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+   
+    <section class="content border-bottom padding-block">
+        <!-- start container -->
+        <div class="container">
+            <!-- start row -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-lg-7">
+                   
+                    <h3 class="title">Specialties</h3>
+                    <p>
+                        @if (Model != null)
+                {
+                if (!string.IsNullOrEmpty(Model.Specialities))
+                {
+                   @Html.Raw(@Model.Specialities)
+                }
+                else
+                {
+                    @("No information provided")
+                   
+                }
+                }else
+                {
+                    @("No information provided")
+                   
+                }
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-lg-5">
+                    <div class="block-grey">
+                        <table>
+                            <tbody><tr>
+                                       <td class="font-weight-m">Website</td>
+                                       <td class="text-right">  @if (Model != null)
+                {
+                if (!string.IsNullOrEmpty(Model.Website))
+                {
+                    @Model.Website;
+                }
+                else
+                {
+                    @("No information provided")
+                   
+                }
+                }else
+                {
+                    @("No information provided")
+                   
+                }</td>
+                                   </tr>
+                                <tr>
+                                    <td class="font-weight-m">Industry</td>
+                                    <td class="text-right"> @if (Model != null)
+                {
+                    if (!string.IsNullOrEmpty(Model.Industry))
+                {
+                    @Model.Industry;
+                }
+                else
+                {
+                    @("No information provided")
+                   
+                }
+                }else
+                {
+                    @("No information provided")
+                   
+                }</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">Type</td>
+                                    <td class="text-right"> @if (Model != null)
+                {
+                if (!string.IsNullOrEmpty(Model.Type))
+                {
+                    @Model.Type;
+                }
+                else
+                {
+                    @("No information provided")
+                   
+                }
+                }else
+                {
+                    @("No information provided")
+                   
+                }</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">Headquarters</td>
+                                    <td class="text-right"> @if (Model != null)
+                {
+                if (!string.IsNullOrEmpty(Model.Headquarters))
+                {
+                    @Model.Headquarters;
+                }
+                else
+                {
+                    @("No information provided")
+                   
+                }
+                }else
+                {
+                    @("No information provided")
+                   
+                }</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">Company Size</td>
+                                    <td class="text-right"> @if (Model != null)
+                {
+                if (!string.IsNullOrEmpty(Model.CompanySize))
+                {
+                    @Model.CompanySize;
+                }
+                else
+                {
+                    @("No information provided")
+                   
+                }
+                }else
+                {
+                    @("No information provided")
+                   
+                }</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-m">Founded</td>
+                                    <td class="text-right"> @if (Model != null)
+                {
+                @Model.Founded.Value.Year;
+                
+                }else
+                {
+                    @("No information provided")
+                   
+                }</td>
+                                </tr>
+                            </tbody></table>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    
+
+</div>
+
+
+    

@@ -1,0 +1,42 @@
+﻿@using DomainModel
+@model IList<DomainModel.Experience>
+
+
+
+<table>
+    <thead>
+        <tr>
+            <tr>
+                <th>Company Name</th>
+                <th>From</th>
+                <th>Country</th>
+                <th>Experience</th>
+                <th>Position</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count == 0)
+        {
+            <tr>
+                <td colspan="5">You currently have no work experience.</td>
+            </tr>
+        }
+        @foreach (Experience exp in Model)
+        {
+            <tr>
+                <td>@exp.CompanyName</td>
+                <td>@exp.StartDate.Value.ToString("dd MMMM, yyyy")</td>
+                <td>@exp.Country</td>
+                <td>@exp.PositionInCompany</td>
+                <td>@exp.PositionInCompany</td>
+                <td><a class="btnEdit" href="../Experience/Edit?id=@exp.ID">Edit</a></td>
+                <td><a class="btnDelete" href="../Experience/Delete?id=@exp.ID">Delete</a></td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>

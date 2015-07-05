@@ -1,0 +1,221 @@
+﻿@using DomainModel
+@using MVC.Models
+@model IList<MVC.Models.JobDetails>
+
+@{
+    ViewBag.Title = "Jobs Listing | Jobs";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section head{
+    
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(".filter .close").click(function() {
+                window.location = "../Jobs";
+            });
+        });
+    </script>
+}
+
+<header class="page-header">
+    <h1 class="page-title">Jobs Listings</h1>
+</header>
+
+<section id="recruit_widget_jobs-3" class="homepage-widget recruit_widget_jobs">
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-12">
+                 <div class="form-group">
+                     <label>Search Keyword</label>
+                     @using (Html.BeginForm("Search", "Jobs"))
+                        {
+                     @Html.TextBox("txtSearch",null,htmlAttributes:new {@placeholder="Enter Search Keyword"})
+                        }
+                     </div>
+            </div>
+        </div>
+        
+        @if (Model.Count > 0)
+        {
+            <div class="row">
+            
+            
+
+            <div class="recent-jobs   col-lg-8 col-md-6 col-sm-12">
+                
+                <div class="job_listings" data-location="" data-keywords="" data-show_filters="false" data-show_pagination="false" data-per_page="5" data-orderby="featured" data-order="DESC" data-categories="">
+                    <ul class="job_listings">
+                        
+                        @foreach (JobDetails JobInfo in @Model)
+                        {
+                            <li id="@JobInfo.Job.Job_ID" class=" job_listing type-job_listing hentry " >
+                                <div class="row">
+                                    <a href="../Jobs/Details/?job_id=@JobInfo.Job.Job_ID" >
+                                        <div class="logo col-sm-2 col-md-1 col-lg-1">
+                                            <img class="company_logo" src="../../content/static/@if (!string.IsNullOrEmpty(@JobInfo.Company.Logo))
+                                                                                                {
+                                                                                                    @JobInfo.Company.Logo
+                                                                                                }
+                                                                                                else
+                                                                                                {@("no-logo.png")
+                                                                                                }" alt="@JobInfo.Company.Name">
+                                        </div>
+
+                                        <div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
+                                            <h3>@JobInfo.Job.Title</h3>
+
+                                            <div class="company">
+                                                <strong>@JobInfo.Company.Name</strong>
+                                            </div>
+                                        </div>
+
+                                        <div class="location col-xs-12 col-md-5 col-lg-4">
+                                            @JobInfo.Job.JobLocation		
+                                        </div>
+
+                                        <ul class="meta col-lg-2">
+
+                                            <li class="job-type @if (JobInfo.Job.JobType.ToLower() == "part time")
+                                                                {
+                                                                    @("part-time")
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (JobInfo.Job.JobType.ToLower() == "full time")
+                                                                    {
+                                                                        @("full-time")
+                                                                    }
+                                                                    else
+                                                                    {@("freelance")}  
+                                                                }">@JobInfo.Job.JobType</li>
+                                            <li class="date">
+                                                <span data-date="@JobInfo.Job.PostDate.Value.ToString("yyyy-MM-dd HH:mm:ss")" class="timeago"></span>
+                                            </li>
+
+                                        </ul>
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                        
+
+                    </ul>
+
+
+
+                </div>
+            </div>
+                
+                @if (Request.QueryString.Count > 0)
+                {
+                   <div class="job-spotlight col-lg-4 col-md-6 col-sm-12">
+                
+
+
+                <div class="single-job-spotlight">
+
+                    <div class="single-job-spotlight-content">
+                       
+                       <article class=" filter">
+                           <div class="filter-type">Filtering By <span class="close">X</span></div>
+                           <ul>
+                               <li>@if (Request.QueryString["name"] != null)
+                                   {
+                                       @(Request.QueryString["name"])
+                                   }</li>
+                           </ul>
+                        </article>
+                        
+                        
+                    </div>
+                </div>
+                    </div> 
+                }
+                
+                
+
+                <div class="job-spotlight col-lg-4 col-md-6 col-sm-12">
+                
+
+
+                <div class="single-job-spotlight">
+
+                    <div class="single-job-spotlight-content">
+                       
+                       <article class=" filter">
+                            <div class="filter-type">Organization</div>
+                            <ul>
+                                @foreach (var company in @Model.Select(m=>new {m.Company.Name,m.Company.ID}).Distinct())
+                                {
+                                   
+                                    <li>@Html.ActionLink(company.Name,"Index",new {type="Organization",org_id=company.ID,name=company.Name})</li>
+                                }
+                            </ul>
+                            <div class="filter-type">Job Type</div>
+                            <ul>
+                                
+                                <li>@Html.ActionLink("Full Time","Index",new {type="Job Type",job_type="1",name="Full Time"})</li>
+                                <li>@Html.ActionLink("Part Time","Index",new {type="Job Type",job_type="2",name="Part Time"})</li>
+                                <li>@Html.ActionLink("None Time","Index",new {type="Job Type",job_type="3",name="None"})</li>
+                            </ul>
+                           @* <div class="filter-type">City</div>*@
+                        </article>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        }
+        else
+        {
+            <div class="row">
+                
+                <div class="recent-jobs   col-lg-8 col-md-6 col-sm-12">
+                    <div class="job-manager-form">
+                        <div class="field account-sign-in">
+                            <p style="font-size: 15px;color: black;margin: 0 auto;">Sorry! no records found</p>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Request.QueryString.Count > 0)
+                {
+                    <div class="job-spotlight col-lg-4 col-md-6 col-sm-12">
+                
+
+
+                        <div class="single-job-spotlight">
+
+                            <div class="single-job-spotlight-content">
+                       
+                                <article class=" filter">
+                                    <div class="filter-type">Filtering By <span class="close">X</span></div>
+                                    <ul>
+                                        <li>@if (Request.QueryString["name"] != null)
+                                            {
+                                                @(Request.QueryString["name"])
+                                            }</li>
+                                    </ul>
+                                </article>
+                        
+                        
+                            </div>
+                        </div>
+                    </div> 
+                }
+
+            </div>
+           
+            
+        }
+        
+
+    </div>
+
+</section>
+

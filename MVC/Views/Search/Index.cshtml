@@ -1,0 +1,169 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Search | Books";
+    Layout = "../Shared/_MainLayout.cshtml";
+}
+
+<div class="page-section " style="margin-top: 0px;margin-bottom: 0px;border-top: 0px #e0e0e0 solid;border-bottom: 0px #e0e0e0 solid;">
+    <!-- Container Start -->
+    <div class="container">
+        <div class="row">
+            <div class="section-fullwidth">
+                <div class="element-size-100">
+                    <div class="section-content">
+                        <div class="dynamic-listing">
+                            <div class="col-md-12 cs-section-title"><h2>Listing Page</h2></div>		 <div class="col-md-12 main-filter" data-node="1" data-form="AOHTE" data-post="1705">
+                                <nav class="wow filter-nav">
+
+                                    <!--Sorting Navigation-->
+                                    <ul class="cs-filter-menu pull-left">
+                                        <li><span>Sort By:</span></li>
+                                        <li><a href="#">Most Recent</a></li>
+                                        <li><a href="#">Most Popular</a></li>
+                                        <li><a href="#">Alphabetical</a></li>
+                                        <li><a href="#">Highest Price</a></li>
+                                        <li><a href="#">Lowest Price</a></li>
+                                    </ul>
+
+
+                                </nav>
+                            </div>
+                            <div class="cs-listing-wrapper">
+                                <div class="col-md-12 cs-directory default_listing lightbox">
+
+                                    <article class="directory-section">
+                                        <div class="cs_thumbsection">
+                                            <ul class="dr_thumbsection">
+                                                <li class="featured_thumb">
+                                                    <a href="http://directory.chimpgroup.com/directory/traditional-plumbing-designs-in-wakefield/">
+                                                        <span class="cs-paid-ad">Featured</span>                           <img src="http://directory.chimpgroup.com/wp-content/uploads/services-dir12-370x280.jpg" alt="">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="content_info">
+
+                                            <h2 itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                                                <a href="http://directory.chimpgroup.com/directory/traditional-plumbing-designs-in-wakefield/" itemprop="name">
+                                                    Traditional Plumbing Designs in Wakefield
+                                                </a>
+                                            </h2>
+                                            <ul class="cs-user-date">
+                                                <li>
+                                                    <a href="http://directory.chimpgroup.com/author/directory-admin/?&#038;action=detail&#038;uid=47">
+                                                        Juliya
+                                                    </a>
+                                                </li>
+                                                <li>May 20, 2016</li>
+                                            </ul>
+                                            <p>That sneered vivaciously that thus hey porpoise uncritical gosh and much and this haughtily broadcast goodness ponderous squid darn in sheepish yet the slapped mildly and adventurously sincere less dalmatian assentingly wherever left ethereal the underneath oh lustily arduously that...</p>                <div class="cs-detail-info">
+                                                <div class="cs-location-address" itemscope itemtype="http://schema.org/CreativeWork" itemprop="Place">
+                                                    <i class="icon-map-marker"></i>
+                                                    Sheffield,united kingdom
+                                                </div>
+                                                <div class="dr_location post-2067">
+                                                 
+                                                    <a class="cs-add-wishlist tolbtn" data-target="#loginSection_17772878" data-toggle="modal" data-original-title="Add to Favourite" href="#">
+                                                        <i class="icon-star-o"></i>
+                                                    </a>
+
+                                                </div>
+                                                <div class="dr_pricesection" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                                    <span itemprop="price">Price On Call</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-sidebar">
+
+                        <div id="directory-advanced-search_240900">
+                            <form id="directory-advance-search-form" method="get" role="search" action="http://directory.chimpgroup.com/listing-plain-heading/" enctype="multipart/form-data">
+                                <input type="hidden" name="filter" value="all" />
+                                <div class="dr-filters directory-advanced-search-content sidebar-search newone">
+                                    <ul>
+                                        <li>
+                                            <input type="text" class="form-search-text" maxlength="128" size="30" value="" name="search_text" id="edit-search-api-views-fulltext" placeholder="Enter keyword...">
+                                        </li>
+                                        <li>
+                                            <span class="cat-loading-fields" id="cat-loading-fields"></span>
+
+                                            <div class="distance-in-miles">
+                                                <select class="form-select dir-map-search" name="type" id="directory-field-category" onchange="cs_directory_type_categories_sidebar_search(this.value, 'http://directory.chimpgroup.com/wp-admin/admin-ajax.php', 'shortcode')">
+                                                    <option value="all">All Categories</option>
+                                                    <option value="property">Property</option>
+                                                    <option value="motors">Motors</option>
+                                                    <option value="for-sale">For Sale</option>
+                                                    <option value="jobs">Jobs</option>
+                                                    <option value="services">Services</option>
+                                                    <option value="restaurant">Restaurant</option>
+                                                    <option value="pets">Pets</option>
+                                                    <option value="hotels-travel">Hotels &#038; Travel</option>
+                                                    <option value="education">Education</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="distance-in-miles">
+                                                <input type="search" value="" autocomplete="on" id="directory-search-location" class="selectpicker show-tick form-control" title="Location" placeholder="Postcode or location" name="location">
+
+                                                <input id="geo_loc_option" name="geo" type="hidden" value="on">
+                                                <div id="geo_location_address">
+                                                    <input type='hidden' name='geo_location_lat' value=''>
+                                                    <input type='hidden' name='geo_location_long' value=''>
+                                                </div>
+                                            </div>
+
+                                            <div class="distance-in-miles">
+
+                                                <div class="input-sec">
+                                                    <small>Radius</small>
+                                                    <div class="cs-drag-slider" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="150"></div>
+                                                    <input id="sidebar-location-slider" class="cs-range-input" name="radius" type="text" value="150" />
+                                                </div>
+
+                                            </div>
+                                        </li>
+
+                                        <li class="categories-load">
+                                            <div class="directory-type-categories-load">
+                                            </div>
+                                        </li>
+                                        <li class="price_fields" style="display:none"></li>
+                                        <li class="advance-search-custom-fields-sidebar" style="display:none"></li>
+                                        <li>
+                                            <input type="hidden" name="pagination" value="20" />
+                                            <input type="hidden" name="search_page" value="20" />
+                                            <input type="hidden" id="cs_loc_max_input" name="cs_loc_max_input" value="150" />
+                                            <input type="hidden" id="cs_loc_incr_step" name="cs_loc_incr_step" value="1" />
+                                            <input type="hidden" id="goe_location_enable" name="goe_location_enable" value="0" />
+                                            <button type="submit" name="submit" id="directory-submit-search-view" class="cs-bgcolor sidebar-search-sbmt">Filter</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="section-content">
+                        <div class='col-md-12'>
+                            <nav class='pagination'>
+                                <ul><li class='pgprev cs-inactive'><a><i class='icon-angle-left'></i>Prev</a></li><li><a class='active'>1</a></li><li><a href='?page_id_all=2&amp;filter=all&amp;search_text=&amp;type=&amp;location=&amp;geo=on&amp;geo_location_lat=&amp;geo_location_long=&amp;radius=150&amp;min_price=Min Price&amp;max_price=Max Price&amp;cs_directory_search_location=Yes&amp;search_view=&amp;goe_location_enable=Yes&amp;cs_loc_max_input=150&amp;cs_loc_incr_step=1&amp;submit=&amp;action=cs_directory_map_search'>2</a></li><li><a href='?page_id_all=3&amp;filter=all&amp;search_text=&amp;type=&amp;location=&amp;geo=on&amp;geo_location_lat=&amp;geo_location_long=&amp;radius=150&amp;min_price=Min Price&amp;max_price=Max Price&amp;cs_directory_search_location=Yes&amp;search_view=&amp;goe_location_enable=Yes&amp;cs_loc_max_input=150&amp;cs_loc_incr_step=1&amp;submit=&amp;action=cs_directory_map_search'>3</a></li><li><a href='?page_id_all=4&amp;filter=all&amp;search_text=&amp;type=&amp;location=&amp;geo=on&amp;geo_location_lat=&amp;geo_location_long=&amp;radius=150&amp;min_price=Min Price&amp;max_price=Max Price&amp;cs_directory_search_location=Yes&amp;search_view=&amp;goe_location_enable=Yes&amp;cs_loc_max_input=150&amp;cs_loc_incr_step=1&amp;submit=&amp;action=cs_directory_map_search'>4</a></li><li class='pgnext'><a class='icon' href='?page_id_all=2&amp;filter=all&amp;search_text=&amp;type=&amp;location=&amp;geo=on&amp;geo_location_lat=&amp;geo_location_long=&amp;radius=150&amp;min_price=Min Price&amp;max_price=Max Price&amp;cs_directory_search_location=Yes&amp;search_view=&amp;goe_location_enable=Yes&amp;cs_loc_max_input=150&amp;cs_loc_incr_step=1&amp;submit=&amp;action=cs_directory_map_search'>Next<i class='icon-angle-right'></i></a></li></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                        </div>
+        </main>
+<div class="clear"></div>
+

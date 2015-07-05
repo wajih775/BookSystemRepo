@@ -1,0 +1,39 @@
+﻿@using DomainModel
+@model System.Collections.Generic.IList<DomainModel.Reference>
+
+<table >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Job Title</th>
+            <th>Company Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+         @if (Model.Count == 0)
+        {
+            <tr>
+                <td colspan="7">You currently have no education.</td>
+            </tr>
+        }
+
+        @foreach (Reference reference in Model)
+        {
+            <tr>
+                <td>@reference.Name</td>
+                <td>@reference.JobTitle</td>
+                <td>@reference.CompanyName</td>
+                <td>@reference.PhoneNumber</td>
+                <td>@reference.EmailAddress</td>
+                <td><a class="btnEdit" href="../Reference/Edit?id=@reference.ID">Edit</a></td>
+                <td><a class="btnDelete" href="../Reference/Delete?id=@reference.ID">Delete</a></td>
+            </tr>
+
+        }
+    
+    </tbody>
+</table>

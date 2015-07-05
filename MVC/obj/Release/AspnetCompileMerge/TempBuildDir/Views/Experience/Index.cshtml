@@ -1,0 +1,135 @@
+﻿@model DomainModel.Experience
+
+@{
+    ViewBag.Title = "Add | Experience";
+    Layout = "~/Views/Shared/_MinLayout.cshtml";
+}
+
+
+@section head{
+
+    
+    <script type="text/javascript">
+        jQuery(function() {
+            jQuery('.datepicker').datepicker({ format: "dd-mm-yyyy" }); //Initialise any date pickers
+        });
+    </script>
+
+   
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#frmExperience").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    StartDate: { validators: { notEmpty: {}, date: { format: 'DD-MM-YYYY', message: 'Invalid Date Format' } } },
+                    EndDate: { validators: { notEmpty: {}, date: { format: 'DD-MM-YYYY', message: 'Invalid Date Format' } } },
+                    CompanyName: { validators: { notEmpty: {} } },
+                    CompanyIndustry: { validators: { notEmpty: {} } },
+                    JobRole: { validators: { notEmpty: {} } },
+                    PositionInCompany: { validators: { notEmpty: {} } },
+                    Country: { validators: { notEmpty: {} } }
+
+                }
+            });
+        });
+    </script>
+}
+
+
+<h2 class="modal-title">Experience</h2>
+
+
+ @if (!@Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+                }
+
+
+
+                @using (Html.BeginForm("Index", "Experience", FormMethod.Post, new { id = "frmExperience" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.StartDate)
+                            @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(m => m.StartDate)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.EndDate)
+                            @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control datepicker" })
+                            @Html.ValidationMessageFor(m => m.EndDate)
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CompanyName)
+                            @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.CompanyName)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CompanyIndustry)
+                            @Html.DropDownListFor(m => m.CompanyIndustry, ViewData["Industries"] as SelectList)
+                            @Html.ValidationMessageFor(m => m.CompanyIndustry)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.JobRole)
+                            @Html.DropDownListFor(m => m.JobRole, ViewData["JobRole"] as SelectList)
+                            @Html.ValidationMessageFor(m => m.JobRole)
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.PositionInCompany)
+                            @Html.TextBoxFor(m => m.PositionInCompany, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.PositionInCompany)
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Country)
+                            @Html.DropDownListFor(m => m.Country, ViewData["Countries"] as SelectList)
+                            @Html.ValidationMessageFor(m => m.Country)
+                        </div>
+                    </div>
+                    
+                     
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.WorkDescription)
+                            @Html.TextAreaFor(m => m.WorkDescription,4,4, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.WorkDescription)
+                        </div>
+                    </div>
+                    
+                    <p class="submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Add" />
+                    </p>
+                }

@@ -1,0 +1,90 @@
+﻿@using DomainModel
+@using MVC.Models
+@model IList<MVC.Models.JobDetails>
+@{
+    ViewBag.Title = "Applied Jobs | Jobs";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<header class="page-header">
+    <h1 class="page-title">Your Applied Jobs</h1>
+</header>
+
+
+<section id="recruit_widget_jobs-3" class="homepage-widget recruit_widget_jobs">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="recent-jobs col-lg-12">
+                
+                <div class="job_listings" data-location="" data-keywords="" data-show_filters="false" data-show_pagination="false" data-per_page="5" data-orderby="featured" data-order="DESC" data-categories="">
+                    <ul class="job_listings">
+                        
+                        @foreach (JobDetails JobInfo in @Model)
+                        {
+                              <li id="@JobInfo.Job.Job_ID" class=" job_listing type-job_listing hentry " >
+                            <div class="row">
+                                <a href="../Jobs/Details/?job_id=@JobInfo.Job.Job_ID" >
+                                    <div class="logo col-sm-2 col-md-1 col-lg-1">
+                                        <img class="company_logo" src="../../content/static/@if (!string.IsNullOrEmpty(@JobInfo.Company.Logo))
+                                                                                            {
+                                                                                                @JobInfo.Company.Logo
+                                                                                            }
+                                                                                            else
+                                                                                            {@("no-logo.png")
+                                                                                            }" alt="@JobInfo.Company.Name">
+                                    </div>
+
+                                    <div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
+                                        <h3>@JobInfo.Job.Title</h3>
+
+                                        <div class="company">
+                                            <strong>@JobInfo.Company.Name</strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="location col-xs-12 col-md-5 col-lg-4">
+                                        @JobInfo.Job.JobLocation		
+                                    </div>
+
+                                    <ul class="meta col-lg-2">
+
+                                        <li class="job-type @if (JobInfo.Job.JobType.ToLower() == "part time")
+                                                            {
+                                                                @("part-time")
+                                                            }
+                                                            else
+                                                            {
+                                                                if (JobInfo.Job.JobType.ToLower() == "full time")
+                                                            {
+                                                                @("full-time")
+                                                            }
+                                                             else
+                                                             {@("freelance")}  
+                                                            }">@JobInfo.Job.JobType</li>
+                                        <li class="date">
+                                            <span>Posted 1 year ago</span>
+                                        </li>
+
+                                    </ul>
+                                </a>
+                            </div>
+                        </li>
+                        }
+                        
+
+                    </ul>
+                    
+
+                </div>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+</section>

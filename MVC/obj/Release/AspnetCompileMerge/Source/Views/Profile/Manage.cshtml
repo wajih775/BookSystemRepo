@@ -1,0 +1,171 @@
+﻿@model MVC.Models.Profile
+
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@section head
+{
+    <script src="~/content/js/manage-account.js"></script>
+    
+    <script>
+
+        var imgLoading = "<div class='imgLoading'><img src='../../content/images/loading.gif'/></div>";
+
+
+        //Add Education
+        jQuery(document).ready(function() {
+
+            bindGridTools("Education", "/Profile/_EducationList", "education-list");
+            bindGridTools("Experience", "/Profile/_ExperienceList", "experience-list");
+            bindGridTools("Certifications", "/Profile/_CertificationsList", "certification-list");
+            bindGridTools("Skills", "/Profile/_SkillsList", "skill-list");
+            bindGridTools("Languages", "/Profile/_LanguagesList", "language-list");
+            bindGridTools("References", "/Profile/_ReferencesList", "reference-list");
+
+
+            function bindGridTools(divID, partialView, gridContainerID) {
+                jQuery('#' + divID + ' .btnAdd, #' + divID + '  .btnEdit,#' + divID + '  .btnDelete').magnificPopup({
+                    disableOn: 700,
+                    type: 'iframe',
+                    mainClass: 'mfp-fade',
+                    removalDelay: 160,
+                    preloader: false,
+                    callbacks: {
+                        open: function() {window.location.hash="";},
+                        close: function() {
+                            jQuery.ajax({
+                                url: partialView,
+                                type: "GET",
+                                beforeSend: function() { jQuery('#' + gridContainerID + '').html(imgLoading); },
+                                success: function(partialViewResult) {
+                                    jQuery('#' + gridContainerID + '').html(partialViewResult);
+                                    bindGridTools(divID, partialView, gridContainerID);
+                                    window.location.hash = "#" + divID;
+                                },
+                                error: function() { alert('There was an error loading data.'); }
+                            });
+                        }
+                    },
+                    fixedContentPos: true
+                }); //End Magnific Popup
+            } //End Bind Tools
+
+
+        }); //End Document Ready
+
+    </script>
+
+}
+
+<header class="page-header">
+    <h1 class="page-title">Edit Resume</h1>
+</header>
+
+
+<section id="jobify_widget_stats-2" class=" jobify_widget_stats">
+    <div class="container entry-content">
+
+        <ul class="job-stats row showing-5">
+           
+            <li class="job-stat col-md-2 col-sm-6 col-xs-12"> <div><img src='../../content/images/edu.png' /></div> <a href="#Education">Education</a></li>
+            <li class="job-stat col-md-2 col-sm-6 col-xs-12"><div><img src='../../content/images/exp.png' /> </div><a href="#Experience">Work Experience</a></li>
+            <li class="job-stat col-md-2 col-sm-6 col-xs-12"><div><img src='../../content/images/cert.png' /></div><a href="#Certifications">Certifications</a></li>
+             <li class="job-stat col-md-2 col-sm-6 col-xs-12"><div><img src='../../content/images/skills.png' /></div><a href="#Skills">Skills</a></li>
+            <li class="job-stat col-md-2 col-sm-6 col-xs-12"><div><img src='../../content/images/lang.png' /></div><a href="#Languages">Languages</a></li>
+            
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+
+<div id="primary" >
+    <div id="content" class="container" role="main">
+
+        <article  class=" page hentry" id="Education">
+            <div class="acc-content">
+                <div class="woocommerce">
+                    <h3>Education</h3>
+                    <div id="education-list">
+                    @Html.Partial("_EducationList",Model.Educations)    
+                    </div>
+                    <a class="btnAdd"   href="../Education/">Add New</a>
+                    
+                </div>
+            </div>
+        </article>
+        
+        <article  class=" page hentry" id="Experience">
+            <div class="acc-content">
+                <div class="woocommerce">
+                    <h3>Work Experience</h3>
+                     <div id="experience-list">
+                    @Html.Partial("_ExperienceList",Model.Experience)    
+                    </div>
+                    <a class="btnAdd"  href="../Experience/">Add New</a>
+                </div>
+            </div>
+        </article>
+        
+        <article  class=" page hentry" id="Certifications">
+            <div class="acc-content">
+                <div class="woocommerce">
+                    <h3>Training & Certifications</h3>
+                     <div id="certification-list">
+                    @Html.Partial("_CertificationsList",Model.Certifications)    
+                    </div>
+                    <a class="btnAdd"  href="../Certification/">Add New</a>
+                </div>
+            </div>
+        </article>
+        
+        <article  class=" page hentry" id="Skills">
+            <div class="acc-content">
+                <div class="woocommerce">
+                    <h3>Skills</h3>
+                     <div id="skill-list">
+                    @Html.Partial("_SkillsList",Model.Skills)    
+                    </div>
+                    <a class="btnAdd"  href="../Skill/">Add New</a>
+                </div>
+            </div>
+        </article>
+        
+        <article  class=" page hentry" id="Languages">
+            <div class="acc-content">
+                <div class="woocommerce">
+                    <h3>Languages</h3>
+                     <div id="language-list">
+                    @Html.Partial("_LanguagesList",Model.Languages)    
+                    </div>
+                    <a class="btnAdd"  href="../Language/">Add New</a>
+                </div>
+            </div>
+        </article>
+        
+        <article  class=" page hentry" id="References">
+            <div class="acc-content">
+                <div class="woocommerce">
+                     <h3>References</h3>
+                     <div id="reference-list">
+                    @Html.Partial("_ReferencesList",Model.References)    
+                    </div>
+                    <a class="btnAdd"  href="../Reference/">Add New</a>
+                </div>
+            </div>
+         </article>
+        
+    </div>
+</div>
+<!-- #primary -->
+
+
+
+
+

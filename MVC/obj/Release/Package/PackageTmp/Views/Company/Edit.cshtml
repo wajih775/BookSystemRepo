@@ -1,0 +1,233 @@
+﻿@model DomainModel.Company
+
+@{
+    ViewBag.Title = "Edit | Company";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+@section head{
+    
+    <script src="~/content/js/bootstrap.min.js"></script>
+    <script src="~/content/plugins/jqueryFileUpload/js/jquery.ui.widget.js"></script>
+    <script src="~/content/plugins/jqueryFileUpload/js/jquery.iframe-transport.js"></script>
+    <script src="~/content/plugins/jqueryFileUpload/js/jquery.fileupload.js"></script>
+    <script src="~/content/js/company.js"></script>
+    
+    <style>
+        #company-logo {   border: 3px solid rgb(224, 224, 224);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;}
+    </style>
+    
+    
+
+    <script type="text/javascript">
+        jQuery(function() {
+            jQuery('.datepicker').datepicker({ format: "dd-mm-yyyy" }); //Initialise any date pickers
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("#editCompanyForm").formValidation({
+                // Indicate the framework
+                // Can be bootstrap, foundation, pure, semantic, uikit
+                framework: 'bootstrap',
+                // Other settings
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+
+                fields: {
+                    Name: { validators: { notEmpty: {} } },
+                    About: { validators: { notEmpty: {} } },
+                    Website: {
+                        validators: {
+                            notEmpty: {},
+                            uri: {
+                                message: 'The website address is not valid'
+                            }
+                        }
+                    },
+                    Industry: { validators: { notEmpty: {} } },
+                    Type: { validators: { notEmpty: {} } },
+                    Headquarters: { validators: { notEmpty: {} } },
+                    CompanySize: { validators: { notEmpty: {} } },
+                    Founded: { validators: { notEmpty: {}, date: { format: 'DD-MM-YYYY', message: 'Invalid Date Format' } } }
+
+
+                }
+            });
+        });
+    </script>
+}
+
+
+<header class="page-header">
+    <h1 class="page-title">Edit | Company</h1>
+</header>
+
+
+<div id="primary" class="">
+    <div id="content" class="container" role="main">
+
+        <article class="page hentry">
+            <div class="entry-content">
+
+
+                @if (!@Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="job-manager-error">@Html.ValidationSummary(true)</div>
+
+                }
+
+
+                @using (Html.BeginForm("Edit", "Company", FormMethod.Post, new { @id = "editCompanyForm", @name = "editCompanyForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.TextBoxFor(m => m.ID, new { @type = "hidden" })
+                    @Html.TextBoxFor(m => m.Logo, new { @type = "hidden" })
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <img id="company-logo" src="../../content/static/@if (Model != null)
+                                                                                 {
+                                                                                     if (string.IsNullOrEmpty(@Model.Logo))
+                                                                                     {
+                                                                                         @("no-logo.png")
+
+                                                                                     }
+                                                                                     else
+                                                                                     {
+                                                                                         @Model.Logo
+                                                                                     }
+                                                                                 }
+                                                                                 else
+                                                                                 {
+                                                                                   @("no-logo.png")  
+                                                                                 } "  style="width: 100px;height: 100px;"/>
+                            </div>
+                            <div id="logoProgress"><div class="progress-bar-status"></div></div>
+                        </div>
+                       
+                       
+                    </div>
+                    
+                    <div class="row">
+                         <div class="col-md-6"> <div class="btn-group">
+                                                   <span class="btn btn-success fileinput-button">
+                                                       <i class="glyphicon glyphicon-upload"></i>
+                                                       <span>Upload Logo</span>
+                                                       <input type="file" id="logoUpload" name="files[]" accept="image/jpg, image/jpeg, image/png,image/bmp" data-url="../Upload/Photo" />
+                                                       </span>
+
+                                               </div></div>
+                    </div>
+                    
+                    <div class="row">
+                         <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name)
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Name)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.About)
+                                @Html.EditorFor(m => m.About, new { @class = "form-control textarea200" })
+                                @Html.ValidationMessageFor(m => m.About)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Specialities)
+                                @Html.EditorFor(m => m.Specialities, new { @class = "form-control textarea200" })
+                                @Html.ValidationMessageFor(m => m.Specialities)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Website)
+                                @Html.TextBoxFor(m => m.Website)
+                                @Html.ValidationMessageFor(m => m.Website)
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Industry)
+                                @Html.TextBoxFor(m => m.Industry)
+                                @Html.ValidationMessageFor(m => m.Industry)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Type)
+                                @Html.TextBoxFor(m => m.Type)
+                                @Html.ValidationMessageFor(m => m.Type)
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Headquarters)
+                                @Html.TextBoxFor(m => m.Headquarters)
+                                @Html.ValidationMessageFor(m => m.Headquarters)
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.CompanySize)
+                                @Html.TextBoxFor(m => m.CompanySize)
+                                @Html.ValidationMessageFor(m => m.CompanySize)
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Founded)
+                                @Html.TextBoxFor(m => m.Founded, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker" })
+                                @Html.ValidationMessageFor(m => m.Founded)
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    
+                    
+            
+                    <div class="col-md-12 login-submit">
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="@if (Model == null){@("Add")}else{@("Update")}" />
+                        @Html.ActionLink("Cancel","Index","Company")
+                    </div>
+                }
+
+
+            </div>
+        </article>
+    </div>
+    <!-- #content -->
+
+</div>
+<!-- #primary -->

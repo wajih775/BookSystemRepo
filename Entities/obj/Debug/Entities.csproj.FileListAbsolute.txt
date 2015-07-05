@@ -1,0 +1,5 @@
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\Entities\bin\Debug\Entities.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\Entities\bin\Debug\Entities.pdb
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\Entities\obj\Debug\Entities.dll
+C:\Users\ahuss\Documents\Visual Studio 2010\Projects\IPSTreeSystem\Entities\obj\Debug\Entities.pdb

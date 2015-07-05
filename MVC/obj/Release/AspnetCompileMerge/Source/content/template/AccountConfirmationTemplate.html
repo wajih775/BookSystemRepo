@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Confirm Registration</title>
+    <style>
+        body {background-color: rgb(245, 245, 245);font-family: 'HelveticaNeue-Regular', 'Helvetica Neue Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;line-height: 20px;}
+        .login-box {margin-top: 150px;margin-bottom: 5px;padding: 20px;box-shadow: 0px 0px 7px gray;background-color: rgb(255, 255, 255);color: black;width: 500px;margin: 0 auto;}
+        .logo {width: 150px;}
+        h2 {color: rgb(28, 125, 185);font-weight: normal;}
+        table{width: 100%}
+        .small{ font-size: 11px;font-weight: bold;color: gray;}
+        .medium{ font-size: 14px;}
+        .table-heading {background-color: rgb(28, 125, 185);padding: 20px;margin-top: 15px;font-weight: bold;color: white;font-size: 24px;text-align: center;margin-bottom: 20px;}
+        .button {color: #ffffff;display: block;padding-left: 20px;padding-right: 20px;padding-top: 14px;padding-bottom: 14px;border-bottom: 3px solid #008a32;width: 200px;background-color: rgb(28, 125, 185);margin: 25px auto;text-align: center;}
+         a{ text-decoration: none;}
+    </style>
+</head>
+<body>
+    <div class=" login-box" dir="ltr">
+        <table>
+            <tr>
+                <td width="150px"><img class="logo" src="http://jobs.schoolgap.com/images/logo.png"></td>
+                <td align="right"><span class="small"> {NAME}, Confirm Registration.</span></td>
+            </tr>
+        </table>
+        <table class="table-heading"><tr><td>Confirm Registration</td></tr></table>
+        <div class="medium">Dear {NAME}, 
+            <br/><br />
+        Welcome to SchoolGap Jobs, your account has been created. However, before you can use it you need to confirm your e-mail address first by clicking the following link:
+        </div>
+        <a href="{HREF}"><div class="button"> Confirm My Email</div></a>
+        
+    </div>
+</body>
+</html>

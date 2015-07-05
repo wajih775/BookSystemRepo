@@ -1,0 +1,92 @@
+﻿@using DomainModel
+@model IList<DomainModel.UserProfile>
+
+@{
+    ViewBag.Title = "Candidates | Jobs";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@if (Model != null)
+{
+    <header class="page-header">
+        <h1 class="page-title">List Of Candidates</h1>
+    </header>
+    
+    
+<section id="recruit_widget_jobs-3" class="homepage-widget recruit_widget_jobs">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="recent-jobs    col-md-8">
+
+                <div class="job_listings" data-location="" data-keywords="" data-show_filters="false" data-show_pagination="false" data-per_page="5" data-orderby="featured" data-order="DESC" data-categories="">
+                    
+                    
+                    <ul class="job_listings">
+                       
+                        @foreach (UserProfile profile in @Model)
+                        {
+                              <li id="@profile.UserName" class=" job_listing type-job_listing hentry " >
+                            <div class="row">
+                                <a href="../Profile/Index?profile=@profile.UserName" >
+                                    <div class="logo col-sm-2 col-md-1 col-lg-1" style="padding: 0;">
+                                        <img class="company_logo" src="../../content/static/@if (!string.IsNullOrEmpty(@profile.Image))
+                                                                                            {
+                                                                                                @profile.Image
+                                                                                            }
+                                                                                            else
+                                                                                            {@("no-logo.png")
+                                                                                            }" alt="@profile.Image">
+                                    </div>
+
+                                    <div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5" >
+                                        <h3>@profile.FirstName @profile.LastName</h3>
+
+                                        <div class="company">
+                                            <strong>@profile.JobTitle</strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="location col-xs-12 col-md-5 col-lg-4" >
+                                        @profile.City,@profile.Country		
+                                    </div>
+
+                                    <ul class="meta col-lg-2" style="padding: 0;">
+
+                                        <li class=""><i class="icon-mobile"></i>@profile.Mobile</li>
+                                        <li class=""><i class="icon-users"></i>@profile.MartialStatus</li>
+                                        
+
+                                    </ul>
+                                </a>
+                            </div>
+                        </li>
+                        }
+                        
+                       
+
+                    </ul>
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+}
+else
+{
+  <div class="page-header">
+    <h1 class="page-title">No Candidates</h1>
+    
+</div>
+}
